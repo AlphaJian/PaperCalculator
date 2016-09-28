@@ -9,11 +9,28 @@
 import Foundation
 import UIKit
 
-var sharedPaperModel : PaperModel?
+class PaperModel : NSObject
+{
+    var sectionQuestionArr : [SectionQuestionModel]!
+    var totalScore : Float!
+}
 
-class PaperModel: NSObject {
+class SectionQuestionModel: NSObject {
+    var sectionScore : Float!
+    var cellQuestionArr : [CellQuestionModel]!
     
-    var numOfSection : Int = 0
-    var PaperDic : NSDictionary = [:]
+    var editStatus : QuestionStatus!
+}
 
+class CellQuestionModel : NSObject
+{
+    var questionNo : Int!
+    var score : Float!
+    var bolYesOrNo : Bool!
+}
+
+enum QuestionStatus {
+    case Finish
+    case Editing
+    case None
 }
