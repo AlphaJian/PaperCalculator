@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		436F393C1D9BBEAA002ECE19 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436F393B1D9BBEAA002ECE19 /* DataManager.swift */; };
 		BAB2A1C11D9BA814003971E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB2A1C01D9BA814003971E7 /* AppDelegate.swift */; };
 		BAB2A1C81D9BA814003971E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAB2A1C71D9BA814003971E7 /* Assets.xcassets */; };
 		BAB2A1D31D9BAAB0003971E7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAB2A1D21D9BAAB0003971E7 /* Default-568h@2x.png */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		436F393B1D9BBEAA002ECE19 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		BAB2A1BD1D9BA814003971E7 /* PaperCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PaperCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB2A1C01D9BA814003971E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAB2A1C71D9BA814003971E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				BAB2A1D91D9BAACF003971E7 /* BlockDefination.swift */,
+				436F393B1D9BBEAA002ECE19 /* DataManager.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAB2A1E01D9BAC53003971E7 /* SettingTableView.swift in Sources */,
+				436F393C1D9BBEAA002ECE19 /* DataManager.swift in Sources */,
 				BAB2A1DA1D9BAACF003971E7 /* BlockDefination.swift in Sources */,
 				BAB2A1C11D9BA814003971E7 /* AppDelegate.swift in Sources */,
 				BAB2A1D71D9BAAC3003971E7 /* PaperModel.swift in Sources */,
