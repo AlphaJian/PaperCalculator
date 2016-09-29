@@ -10,7 +10,7 @@ import UIKit
 
 class ReviewPaperTableView: UITableView, UITableViewDelegate, UITableViewDataSource {
 
-    var model = DataManager.shareManager.paperModel
+    var model = DataManager.shareManager.paperModel.copySelf()
     
     override init(frame: CGRect, style: UITableViewStyle) {
         super.init(frame: frame, style: style)
@@ -18,6 +18,7 @@ class ReviewPaperTableView: UITableView, UITableViewDelegate, UITableViewDataSou
         self.dataSource = self
 
         self.register(QuestionTableViewCell.classForCoder(), forCellReuseIdentifier: "cell")
+        self.separatorStyle = .none
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -42,27 +43,45 @@ class ReviewPaperTableView: UITableView, UITableViewDelegate, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! QuestionTableViewCell
-        
+        cell.selectionStyle = .none
         let cellArr = model.sectionQuestionArr[indexPath.section].cellQuestionArr as [CellQuestionModel]
         
         cell.clearCell()
         
         if indexPath.row * 2 + 1 < cellArr.count
         {
-            cell.initUI(questionArr: [cellArr[indexPath.row * 2], cellArr[indexPath.row * 2 + 1]])
+            cell.initUI(arr: [cellArr[indexPath.row * 2], cellArr[indexPath.row * 2 + 1]], index: indexPath)
         }
         else
         {
-            cell.initUI(questionArr: [cellArr[indexPath.row * 2]])
+            cell.initUI(arr: [cellArr[indexPath.row * 2]], index: indexPath)
         }
         
+        cell.btnHandler = {(newIndex, oldIndex, obj) -> Void in
+            
+            DataManager.shareManager.editCellQuestion(cellModel: obj as! CellQuestionModel, indexPath: newIndex as! NSIndexPath)
+            self.model = DataManager.shareManager.paperModel.copySelf()
+            DispatchQueue.main.async {
+                self.reloadRows(at: [oldIndex as! IndexPath], with: .none)
+                self.reloadSections(IndexSet(integer: oldIndex.section), with: .none)
+            }
+        }
         return cell
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 40))
-        view.backgroundColor = UIColor.red
+        view.backgroundColor = UIColor.white
+        let lbl = UILabel(frame: CGRect(x: 20, y: 0, width: view.frame.width - 20, height: 40))
+        lbl.text = "第\(section + 1)大题, 得分\(model.sectionQuestionArr[section].sectionScore!)"
+        lbl.textColor = UIColor.black
+        view.addSubview(lbl)
+        
         return view
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

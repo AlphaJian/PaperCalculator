@@ -15,13 +15,14 @@ class DataManager: NSObject {
     static let shareManager = DataManager()
     
 
-    func createSectionQuestion(numberOfQuestions : Int, score : Float, bolYesOrNo : Bool){
+    func createSectionQuestion(numberOfQuestions : Int, score : Float, style : QuestionStyle){
         var arr = [CellQuestionModel]()
         for i in 0 ... numberOfQuestions - 1 {
             let qModel = CellQuestionModel()
             qModel.questionNo = i + 1
             qModel.score = score
-            qModel.bolYesOrNo = bolYesOrNo
+            qModel.realScore = score
+            qModel.questionStyle = style
             
             arr.append(qModel)
         }
@@ -37,11 +38,23 @@ class DataManager: NSObject {
         paperModel.sectionQuestionArr.append(sectionModel)
     }
     
+    func editCellQuestion(cellModel : CellQuestionModel, indexPath : NSIndexPath)
+    {
+        let section = paperModel.sectionQuestionArr[indexPath.section]
+        
+        let oldScore = section.cellQuestionArr[indexPath.row].realScore!
+        
+        section.cellQuestionArr[indexPath.row] = cellModel
+        
+        section.sectionScore = section.sectionScore - oldScore + cellModel.realScore
+        paperModel.sectionQuestionArr[indexPath.section] = section
+    }
+    
     func mockData(){
-        createSectionQuestion(numberOfQuestions: 5, score: 2, bolYesOrNo: true)
-        createSectionQuestion(numberOfQuestions: 10, score: 4, bolYesOrNo: true)
-        createSectionQuestion(numberOfQuestions: 4, score: 5, bolYesOrNo: true)
-        createSectionQuestion(numberOfQuestions: 3, score: 15, bolYesOrNo: false)
+        createSectionQuestion(numberOfQuestions: 5, score: 2, style: .yesOrNo)
+        createSectionQuestion(numberOfQuestions: 10, score: 4, style: .yesOrNo)
+        createSectionQuestion(numberOfQuestions: 4, score: 5, style: .yesOrNo)
+        createSectionQuestion(numberOfQuestions: 3, score: 15, style: .multiScore)
     }
 
 }
