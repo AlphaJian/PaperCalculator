@@ -38,7 +38,7 @@ class DataManager: NSObject {
         paperModel.sectionQuestionArr.append(sectionModel)
     }
     
-    func editCellQuestion(cellModel : CellQuestionModel, indexPath : NSIndexPath)
+    func editCellQuestion(cellModel : CellQuestionModel, indexPath : IndexPath)
     {
         let section = paperModel.sectionQuestionArr[indexPath.section]
         

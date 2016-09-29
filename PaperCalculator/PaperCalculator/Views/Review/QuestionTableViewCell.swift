@@ -11,6 +11,7 @@ import UIKit
 class QuestionTableViewCell: UITableViewCell {
 
     var btnHandler : ReturnWithThreeParmsBlock!
+    var multiBtnHandler : ReturnWithThreeParmsBlock!
     var indexPath : IndexPath!
     var questionArr : [CellQuestionModel]!
     
@@ -43,7 +44,7 @@ class QuestionTableViewCell: UITableViewCell {
 
             let btn = UIButton(type: .custom)
             btn.frame = CGRect(x: originX, y: 0, width: Int(width), height: 40)
-            btn.setTitle("第\(model.questionNo!)小题,\(model.score!)", for: .normal)
+            btn.setTitle("第\(model.questionNo!)小题,\(model.realScore!)", for: .normal)
             btn.titleLabel?.backgroundColor = UIColor.clear
             btn.addTarget(self, action: "btnTapped:", for: .touchUpInside)
             btn.tag = 10 + i
@@ -66,22 +67,32 @@ class QuestionTableViewCell: UITableViewCell {
     {
         
         let model = questionArr[sender.tag - 10] as CellQuestionModel
-        if model.score == model.realScore
-        {
-            model.realScore = 0
-        }
-        else
-        {
-            model.realScore = model.score
-        }
         
         //Indexpath exchange
         
-        
-        if btnHandler != nil
+        if model.questionStyle == .yesOrNo
         {
-            let index = IndexPath(row: indexPath.row * 2 + sender.tag - 10, section: indexPath.section)
-            btnHandler!(index as AnyObject, indexPath as AnyObject ,model)
+            if model.score == model.realScore
+            {
+                model.realScore = 0
+            }
+            else
+            {
+                model.realScore = model.score
+            }
+            if btnHandler != nil
+            {
+                let index = IndexPath(row: indexPath.row * 2 + sender.tag - 10, section: indexPath.section)
+                btnHandler!(index as AnyObject, indexPath as AnyObject ,model)
+            }
+        }
+        else
+        {
+            if multiBtnHandler != nil
+            {
+                let index = IndexPath(row: indexPath.row * 2 + sender.tag - 10, section: indexPath.section)
+                multiBtnHandler!(index as AnyObject, indexPath as AnyObject ,model)
+            }
         }
     }
  
