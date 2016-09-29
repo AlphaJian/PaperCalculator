@@ -17,7 +17,7 @@ class DataManager: NSObject {
 
     func createSectionQuestion(numberOfQuestions : Int, score : Float, bolYesOrNo : Bool){
         var arr = [CellQuestionModel]()
-        for i in 0 ... numberOfQuestions {
+        for i in 0 ... numberOfQuestions - 1 {
             let qModel = CellQuestionModel()
             qModel.questionNo = i + 1
             qModel.score = score
@@ -41,7 +41,7 @@ class DataManager: NSObject {
         createSectionQuestion(numberOfQuestions: 5, score: 2, bolYesOrNo: true)
         createSectionQuestion(numberOfQuestions: 10, score: 4, bolYesOrNo: true)
         createSectionQuestion(numberOfQuestions: 4, score: 5, bolYesOrNo: true)
-        createSectionQuestion(numberOfQuestions: 2, score: 15, bolYesOrNo: false)
+        createSectionQuestion(numberOfQuestions: 3, score: 15, bolYesOrNo: false)
     }
 
 }

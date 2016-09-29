@@ -22,6 +22,10 @@ class MainViewController: UIViewController {
     }
     
 
+    @IBAction func pi(_ sender: AnyObject) {
+        let vc = ReviewPaperViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     /*
     // MARK: - Navigation
 
