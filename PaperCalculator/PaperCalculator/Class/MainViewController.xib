@@ -24,6 +24,14 @@
                         <action selector="pi:" destination="-1" eventType="touchUpInside" id="igJ-Qx-GcB"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOs-Ob-X2s">
+                    <frame key="frameInset" minX="99" minY="259" width="46" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="预设置"/>
+                    <connections>
+                        <action selector="setting:" destination="-1" eventType="touchUpInside" id="MaV-BV-Dbc"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </view>

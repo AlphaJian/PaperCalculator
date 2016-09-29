@@ -1,21 +1,32 @@
 //
-//  MainViewController.swift
+//  SettingPaperViewController.swift
 //  PaperCalculator
 //
-//  Created by appledev018 on 9/28/16.
+//  Created by appledev018 on 9/29/16.
 //  Copyright © 2016 apple. All rights reserved.
 //
 
 import UIKit
 
-class MainViewController: UIViewController {
+class SettingPaperViewController: UIViewController {
 
+    var settingTableView : SettingPaperTableView?
+    var settingBotView: SettingBotView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let view = NumView(frame: CGRect(x: 50, y: 200, width: 100, height: 30))
+        settingTableView = SettingPaperTableView(frame: self.view.bounds, style: .plain)
+        self.view.addSubview(settingTableView!)
+
+        settingBotView = SettingBotView(frame: CGRect(x: 0, y: LCDH - 80, width: LCDW, height: 80))
+settingBotView?.initUI()
+        self.view.addSubview(settingBotView!)
         
-        view.initUI(num: 5)
-        self.view.addSubview(view)
+        settingBotView?.addSectionHandler = {
+        
+        }
+        
+        
         
         // Do any additional setup after loading the view.
     }
@@ -23,23 +34,9 @@ class MainViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-        
     }
     
 
-    @IBAction func pi(_ sender: AnyObject) {
-        let vc = ReviewPaperViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
-
-    @IBAction func setting(_ sender: AnyObject) {
-        let vc = SettingPaperViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    
-    
     /*
     // MARK: - Navigation
 

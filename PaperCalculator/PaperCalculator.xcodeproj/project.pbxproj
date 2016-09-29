@@ -19,7 +19,12 @@
 		BAB2A1DA1D9BAACF003971E7 /* BlockDefination.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB2A1D91D9BAACF003971E7 /* BlockDefination.swift */; };
 		BAB2A1DD1D9BAAFD003971E7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB2A1DB1D9BAAFD003971E7 /* MainViewController.swift */; };
 		BAB2A1DE1D9BAAFD003971E7 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAB2A1DC1D9BAAFD003971E7 /* MainViewController.xib */; };
-		BAB2A1E01D9BAC53003971E7 /* SettingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB2A1DF1D9BAC53003971E7 /* SettingTableView.swift */; };
+		BAB2A1E81D9CBBD1003971E7 /* SettingPaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB2A1E71D9CBBD1003971E7 /* SettingPaperViewController.swift */; };
+		BAB2A1EA1D9CBC19003971E7 /* SettingPaperTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB2A1E91D9CBC19003971E7 /* SettingPaperTableView.swift */; };
+		BAB2A1EC1D9CBC6A003971E7 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB2A1EB1D9CBC6A003971E7 /* SettingTableViewCell.swift */; };
+		BAB2A1EE1D9CC232003971E7 /* SettingBotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB2A1ED1D9CC232003971E7 /* SettingBotView.swift */; };
+		BAB2A1F01D9CEAEE003971E7 /* NumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB2A1EF1D9CEAEE003971E7 /* NumView.swift */; };
+		BAC71E601D9CF63F00D2E732 /* NoneSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC71E5F1D9CF63F00D2E732 /* NoneSettingCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +42,12 @@
 		BAB2A1D91D9BAACF003971E7 /* BlockDefination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockDefination.swift; sourceTree = "<group>"; };
 		BAB2A1DB1D9BAAFD003971E7 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BAB2A1DC1D9BAAFD003971E7 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
-		BAB2A1DF1D9BAC53003971E7 /* SettingTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableView.swift; sourceTree = "<group>"; };
+		BAB2A1E71D9CBBD1003971E7 /* SettingPaperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingPaperViewController.swift; sourceTree = "<group>"; };
+		BAB2A1E91D9CBC19003971E7 /* SettingPaperTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingPaperTableView.swift; sourceTree = "<group>"; };
+		BAB2A1EB1D9CBC6A003971E7 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		BAB2A1ED1D9CC232003971E7 /* SettingBotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingBotView.swift; sourceTree = "<group>"; };
+		BAB2A1EF1D9CEAEE003971E7 /* NumView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumView.swift; sourceTree = "<group>"; };
+		BAC71E5F1D9CF63F00D2E732 /* NoneSettingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoneSettingCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +74,11 @@
 			children = (
 				436F39401D9BBF91002ECE19 /* ReviewPaperTableView.swift */,
 				436F39421D9BC0D4002ECE19 /* QuestionTableViewCell.swift */,
+				BAB2A1E91D9CBC19003971E7 /* SettingPaperTableView.swift */,
+				BAB2A1EB1D9CBC6A003971E7 /* SettingTableViewCell.swift */,
+				BAB2A1ED1D9CC232003971E7 /* SettingBotView.swift */,
+				BAC71E5F1D9CF63F00D2E732 /* NoneSettingCell.swift */,
+				BAB2A1EF1D9CEAEE003971E7 /* NumView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -105,8 +120,8 @@
 			children = (
 				BAB2A1DB1D9BAAFD003971E7 /* MainViewController.swift */,
 				BAB2A1DC1D9BAAFD003971E7 /* MainViewController.xib */,
-				BAB2A1DF1D9BAC53003971E7 /* SettingTableView.swift */,
 				436F393E1D9BBF76002ECE19 /* ReviewPaperViewController.swift */,
+				BAB2A1E71D9CBBD1003971E7 /* SettingPaperViewController.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -201,12 +216,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAB2A1E01D9BAC53003971E7 /* SettingTableView.swift in Sources */,
+				BAB2A1EA1D9CBC19003971E7 /* SettingPaperTableView.swift in Sources */,
+				BAB2A1F01D9CEAEE003971E7 /* NumView.swift in Sources */,
 				436F393C1D9BBEAA002ECE19 /* DataManager.swift in Sources */,
 				4369A1DE1D9CB3A1005850ED /* ViewFrameExtension.swift in Sources */,
 				436F39411D9BBF91002ECE19 /* ReviewPaperTableView.swift in Sources */,
+				BAB2A1E81D9CBBD1003971E7 /* SettingPaperViewController.swift in Sources */,
 				BAB2A1DA1D9BAACF003971E7 /* BlockDefination.swift in Sources */,
+				BAB2A1EC1D9CBC6A003971E7 /* SettingTableViewCell.swift in Sources */,
 				436F393F1D9BBF76002ECE19 /* ReviewPaperViewController.swift in Sources */,
+				BAC71E601D9CF63F00D2E732 /* NoneSettingCell.swift in Sources */,
+				BAB2A1EE1D9CC232003971E7 /* SettingBotView.swift in Sources */,
 				BAB2A1C11D9BA814003971E7 /* AppDelegate.swift in Sources */,
 				436F39431D9BC0D4002ECE19 /* QuestionTableViewCell.swift in Sources */,
 				BAB2A1D71D9BAAC3003971E7 /* PaperModel.swift in Sources */,

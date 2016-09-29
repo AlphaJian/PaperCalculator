@@ -8,15 +8,16 @@
 
 import UIKit
 
-class ReviewPaperTableView: UITableView, UITableViewDelegate, UITableViewDataSource {
-
+class SettingPaperTableView: UITableView, UITableViewDelegate, UITableViewDataSource {
+    
     var model = DataManager.shareManager.paperModel
+    var numSection = 0
     
     override init(frame: CGRect, style: UITableViewStyle) {
         super.init(frame: frame, style: style)
         self.delegate = self
         self.dataSource = self
-        self.register(QuestionTableViewCell.classForCoder(), forCellReuseIdentifier: "cell")
+        self.register(NoneSettingCell.classForCoder(), forCellReuseIdentifier: "noneCell")
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -24,36 +25,19 @@ class ReviewPaperTableView: UITableView, UITableViewDelegate, UITableViewDataSou
     }
     
     func  numberOfSections(in tableView: UITableView) -> Int {
-        return model.sectionQuestionArr.count
+        return 3
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let sectionModel = model.sectionQuestionArr[section]
-        if sectionModel.cellQuestionArr.count % 2 == 0
-        {
-            return sectionModel.cellQuestionArr.count / 2
-        }
-        else
-        {
-            return sectionModel.cellQuestionArr.count / 2 + 1
-        }
+      return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! QuestionTableViewCell
-        
-        let cellArr = model.sectionQuestionArr[indexPath.section].cellQuestionArr as [CellQuestionModel]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "noneCell") as! NoneSettingCell
         
         cell.clearCell()
         
-        if indexPath.row * 2 + 1 < cellArr.count
-        {
-            cell.initUI(questionArr: [cellArr[indexPath.row * 2], cellArr[indexPath.row * 2 + 1]])
-        }
-        else
-        {
-            cell.initUI(questionArr: [cellArr[indexPath.row * 2]])
-        }
+        cell.initUI()
         
         return cell
     }
@@ -68,5 +52,9 @@ class ReviewPaperTableView: UITableView, UITableViewDelegate, UITableViewDataSou
         return 40
     }
     
-
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return 150
+    }
+    
+    
 }
