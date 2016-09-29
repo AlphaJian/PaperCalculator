@@ -7,11 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4320911D1D9D05C0000DDD2E /* NoneSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432091151D9D05C0000DDD2E /* NoneSettingCell.swift */; };
+		4320911E1D9D05C0000DDD2E /* NumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432091161D9D05C0000DDD2E /* NumView.swift */; };
+		4320911F1D9D05C0000DDD2E /* SettingBotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432091171D9D05C0000DDD2E /* SettingBotView.swift */; };
+		432091201D9D05C0000DDD2E /* SettingPaperTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432091181D9D05C0000DDD2E /* SettingPaperTableView.swift */; };
+		432091211D9D05C0000DDD2E /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432091191D9D05C0000DDD2E /* SettingTableViewCell.swift */; };
+		432091221D9D05C0000DDD2E /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4320911B1D9D05C0000DDD2E /* QuestionTableViewCell.swift */; };
+		432091231D9D05C0000DDD2E /* ReviewPaperTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4320911C1D9D05C0000DDD2E /* ReviewPaperTableView.swift */; };
 		4369A1DE1D9CB3A1005850ED /* ViewFrameExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4369A1DB1D9CB3A1005850ED /* ViewFrameExtension.swift */; };
 		436F393C1D9BBEAA002ECE19 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436F393B1D9BBEAA002ECE19 /* DataManager.swift */; };
 		436F393F1D9BBF76002ECE19 /* ReviewPaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436F393E1D9BBF76002ECE19 /* ReviewPaperViewController.swift */; };
-		436F39411D9BBF91002ECE19 /* ReviewPaperTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436F39401D9BBF91002ECE19 /* ReviewPaperTableView.swift */; };
-		436F39431D9BC0D4002ECE19 /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436F39421D9BC0D4002ECE19 /* QuestionTableViewCell.swift */; };
 		BAB2A1C11D9BA814003971E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB2A1C01D9BA814003971E7 /* AppDelegate.swift */; };
 		BAB2A1C81D9BA814003971E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAB2A1C71D9BA814003971E7 /* Assets.xcassets */; };
 		BAB2A1D31D9BAAB0003971E7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAB2A1D21D9BAAB0003971E7 /* Default-568h@2x.png */; };
@@ -20,19 +25,19 @@
 		BAB2A1DD1D9BAAFD003971E7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB2A1DB1D9BAAFD003971E7 /* MainViewController.swift */; };
 		BAB2A1DE1D9BAAFD003971E7 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAB2A1DC1D9BAAFD003971E7 /* MainViewController.xib */; };
 		BAB2A1E81D9CBBD1003971E7 /* SettingPaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB2A1E71D9CBBD1003971E7 /* SettingPaperViewController.swift */; };
-		BAB2A1EA1D9CBC19003971E7 /* SettingPaperTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB2A1E91D9CBC19003971E7 /* SettingPaperTableView.swift */; };
-		BAB2A1EC1D9CBC6A003971E7 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB2A1EB1D9CBC6A003971E7 /* SettingTableViewCell.swift */; };
-		BAB2A1EE1D9CC232003971E7 /* SettingBotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB2A1ED1D9CC232003971E7 /* SettingBotView.swift */; };
-		BAB2A1F01D9CEAEE003971E7 /* NumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB2A1EF1D9CEAEE003971E7 /* NumView.swift */; };
-		BAC71E601D9CF63F00D2E732 /* NoneSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC71E5F1D9CF63F00D2E732 /* NoneSettingCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		432091151D9D05C0000DDD2E /* NoneSettingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoneSettingCell.swift; sourceTree = "<group>"; };
+		432091161D9D05C0000DDD2E /* NumView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumView.swift; sourceTree = "<group>"; };
+		432091171D9D05C0000DDD2E /* SettingBotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingBotView.swift; sourceTree = "<group>"; };
+		432091181D9D05C0000DDD2E /* SettingPaperTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingPaperTableView.swift; sourceTree = "<group>"; };
+		432091191D9D05C0000DDD2E /* SettingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		4320911B1D9D05C0000DDD2E /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
+		4320911C1D9D05C0000DDD2E /* ReviewPaperTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewPaperTableView.swift; sourceTree = "<group>"; };
 		4369A1DB1D9CB3A1005850ED /* ViewFrameExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewFrameExtension.swift; sourceTree = "<group>"; };
 		436F393B1D9BBEAA002ECE19 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		436F393E1D9BBF76002ECE19 /* ReviewPaperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewPaperViewController.swift; sourceTree = "<group>"; };
-		436F39401D9BBF91002ECE19 /* ReviewPaperTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewPaperTableView.swift; sourceTree = "<group>"; };
-		436F39421D9BC0D4002ECE19 /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
 		BAB2A1BD1D9BA814003971E7 /* PaperCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PaperCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB2A1C01D9BA814003971E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAB2A1C71D9BA814003971E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -43,11 +48,6 @@
 		BAB2A1DB1D9BAAFD003971E7 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BAB2A1DC1D9BAAFD003971E7 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		BAB2A1E71D9CBBD1003971E7 /* SettingPaperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingPaperViewController.swift; sourceTree = "<group>"; };
-		BAB2A1E91D9CBC19003971E7 /* SettingPaperTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingPaperTableView.swift; sourceTree = "<group>"; };
-		BAB2A1EB1D9CBC6A003971E7 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
-		BAB2A1ED1D9CC232003971E7 /* SettingBotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingBotView.swift; sourceTree = "<group>"; };
-		BAB2A1EF1D9CEAEE003971E7 /* NumView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumView.swift; sourceTree = "<group>"; };
-		BAC71E5F1D9CF63F00D2E732 /* NoneSettingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoneSettingCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +61,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		432091141D9D05C0000DDD2E /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				432091151D9D05C0000DDD2E /* NoneSettingCell.swift */,
+				432091161D9D05C0000DDD2E /* NumView.swift */,
+				432091171D9D05C0000DDD2E /* SettingBotView.swift */,
+				432091181D9D05C0000DDD2E /* SettingPaperTableView.swift */,
+				432091191D9D05C0000DDD2E /* SettingTableViewCell.swift */,
+			);
+			path = Create;
+			sourceTree = "<group>";
+		};
+		4320911A1D9D05C0000DDD2E /* Review */ = {
+			isa = PBXGroup;
+			children = (
+				4320911B1D9D05C0000DDD2E /* QuestionTableViewCell.swift */,
+				4320911C1D9D05C0000DDD2E /* ReviewPaperTableView.swift */,
+			);
+			path = Review;
+			sourceTree = "<group>";
+		};
 		4369A1D81D9CB3A1005850ED /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -72,13 +93,8 @@
 		436F393D1D9BBF1D002ECE19 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				436F39401D9BBF91002ECE19 /* ReviewPaperTableView.swift */,
-				436F39421D9BC0D4002ECE19 /* QuestionTableViewCell.swift */,
-				BAB2A1E91D9CBC19003971E7 /* SettingPaperTableView.swift */,
-				BAB2A1EB1D9CBC6A003971E7 /* SettingTableViewCell.swift */,
-				BAB2A1ED1D9CC232003971E7 /* SettingBotView.swift */,
-				BAC71E5F1D9CF63F00D2E732 /* NoneSettingCell.swift */,
-				BAB2A1EF1D9CEAEE003971E7 /* NumView.swift */,
+				432091141D9D05C0000DDD2E /* Create */,
+				4320911A1D9D05C0000DDD2E /* Review */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -216,21 +232,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAB2A1EA1D9CBC19003971E7 /* SettingPaperTableView.swift in Sources */,
-				BAB2A1F01D9CEAEE003971E7 /* NumView.swift in Sources */,
 				436F393C1D9BBEAA002ECE19 /* DataManager.swift in Sources */,
+				4320911E1D9D05C0000DDD2E /* NumView.swift in Sources */,
 				4369A1DE1D9CB3A1005850ED /* ViewFrameExtension.swift in Sources */,
-				436F39411D9BBF91002ECE19 /* ReviewPaperTableView.swift in Sources */,
+				4320911F1D9D05C0000DDD2E /* SettingBotView.swift in Sources */,
 				BAB2A1E81D9CBBD1003971E7 /* SettingPaperViewController.swift in Sources */,
 				BAB2A1DA1D9BAACF003971E7 /* BlockDefination.swift in Sources */,
-				BAB2A1EC1D9CBC6A003971E7 /* SettingTableViewCell.swift in Sources */,
 				436F393F1D9BBF76002ECE19 /* ReviewPaperViewController.swift in Sources */,
-				BAC71E601D9CF63F00D2E732 /* NoneSettingCell.swift in Sources */,
-				BAB2A1EE1D9CC232003971E7 /* SettingBotView.swift in Sources */,
 				BAB2A1C11D9BA814003971E7 /* AppDelegate.swift in Sources */,
-				436F39431D9BC0D4002ECE19 /* QuestionTableViewCell.swift in Sources */,
+				432091211D9D05C0000DDD2E /* SettingTableViewCell.swift in Sources */,
+				4320911D1D9D05C0000DDD2E /* NoneSettingCell.swift in Sources */,
 				BAB2A1D71D9BAAC3003971E7 /* PaperModel.swift in Sources */,
 				BAB2A1DD1D9BAAFD003971E7 /* MainViewController.swift in Sources */,
+				432091201D9D05C0000DDD2E /* SettingPaperTableView.swift in Sources */,
+				432091231D9D05C0000DDD2E /* ReviewPaperTableView.swift in Sources */,
+				432091221D9D05C0000DDD2E /* QuestionTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
