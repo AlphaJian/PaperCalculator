@@ -10,6 +10,10 @@ import UIKit
 
 class QuestionTableViewCell: UITableViewCell {
 
+    var btnHandler : ReturnWithThreeParmsBlock!
+    var indexPath : IndexPath!
+    var questionArr : [CellQuestionModel]!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,24 +29,62 @@ class QuestionTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func initUI(questionArr : [CellQuestionModel]){
-        if questionArr.count == 3
-        {
-            print("")
-        }
-        let width = self.frame.width / CGFloat(questionArr.count)
-        var originX = 0
+    func initUI(arr : [CellQuestionModel], index : IndexPath){
+        questionArr = arr
+        indexPath = index
+        let padding = 10
+        
+        let width = (self.frame.width - 3 * CGFloat(padding)) / 2
+        
+        var originX = padding
+
         for i in 0 ... questionArr.count - 1 {
             let model = questionArr[i]
-            let btn = UIButton(type: .roundedRect)
+
+            let btn = UIButton(type: .custom)
             btn.frame = CGRect(x: originX, y: 0, width: Int(width), height: 40)
-            btn.setTitle("第\(model.questionNo!)", for: .normal)
-            
-            originX = Int(btn.right())
+            btn.setTitle("第\(model.questionNo!)小题,\(model.score!)", for: .normal)
+            btn.titleLabel?.backgroundColor = UIColor.clear
+            btn.addTarget(self, action: "btnTapped:", for: .touchUpInside)
+            btn.tag = 10 + i
+
+            originX = Int(btn.right()) + padding
             self.contentView.addSubview(btn)
+            
+            if model.realScore < model.score
+            {
+                btn.backgroundColor = UIColor.red
+            }
+            else
+            {
+                btn.backgroundColor = UIColor.green
+            }
         }
     }
-
+    
+    func btnTapped(_ sender: UIButton)
+    {
+        
+        let model = questionArr[sender.tag - 10] as CellQuestionModel
+        if model.score == model.realScore
+        {
+            model.realScore = 0
+        }
+        else
+        {
+            model.realScore = model.score
+        }
+        
+        //Indexpath exchange
+        
+        
+        if btnHandler != nil
+        {
+            let index = IndexPath(row: indexPath.row * 2 + sender.tag - 10, section: indexPath.section)
+            btnHandler!(index as AnyObject, indexPath as AnyObject ,model)
+        }
+    }
+ 
     func clearCell(){
         for view in self.contentView.subviews {
             view.removeFromSuperview()

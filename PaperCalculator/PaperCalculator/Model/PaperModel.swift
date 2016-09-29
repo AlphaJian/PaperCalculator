@@ -13,6 +13,34 @@ class PaperModel : NSObject
 {
     var sectionQuestionArr : [SectionQuestionModel]!
     var totalScore : Float!
+    
+    func copySelf() -> PaperModel{
+        let newModel = PaperModel()
+        
+        var newsectionArr = [SectionQuestionModel]()
+        for obj in sectionQuestionArr {
+            let newSection = SectionQuestionModel()
+            newSection.sectionScore = obj.sectionScore
+            newSection.editStatus = obj.editStatus
+            
+            var newCellArr = [CellQuestionModel]()
+            for item in obj.cellQuestionArr {
+                let newCell = CellQuestionModel()
+                newCell.questionNo = item.questionNo
+                newCell.score = item.score
+                newCell.realScore = item.realScore
+                newCell.questionStyle = item.questionStyle
+                
+                newCellArr.append(newCell)
+            }
+            newSection.cellQuestionArr = newCellArr
+            newsectionArr.append(newSection)
+        }
+        newModel.totalScore = totalScore
+        newModel.sectionQuestionArr = newsectionArr
+        
+        return newModel
+    }
 }
 
 class SectionQuestionModel: NSObject {
@@ -26,11 +54,25 @@ class CellQuestionModel : NSObject
 {
     var questionNo : Int!
     var score : Float!
-    var bolYesOrNo : Bool!
+    var realScore : Float!
+    var questionStyle : QuestionStyle!
+    
+    override init(){
+        questionNo = 0
+        score = 0
+        realScore = 0
+        questionStyle = .yesOrNo
+    }
 }
 
 enum QuestionStatus {
-    case Finish
-    case Editing
-    case None
+    case finish
+    case editing
+    case none
+}
+
+enum QuestionStyle
+{
+    case yesOrNo
+    case multiScore
 }
