@@ -16,7 +16,6 @@ class ReviewPaperTableView: UITableView, UITableViewDelegate, UITableViewDataSou
         super.init(frame: frame, style: style)
         self.delegate = self
         self.dataSource = self
-
         self.register(QuestionTableViewCell.classForCoder(), forCellReuseIdentifier: "cell")
         self.separatorStyle = .none
     }
