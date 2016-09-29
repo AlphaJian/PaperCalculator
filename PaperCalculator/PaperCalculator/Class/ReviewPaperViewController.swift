@@ -11,6 +11,7 @@ import UIKit
 class ReviewPaperViewController: UIViewController {
 
     var paperTableView : ReviewPaperTableView?
+    var popMarkView : PopSelectionScoreView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,32 @@ class ReviewPaperViewController: UIViewController {
         paperTableView = ReviewPaperTableView(frame: self.view.bounds, style: .plain)
         self.view.addSubview(paperTableView!)
         
+        paperTableView?.singleMarkHandler = {(newIndex, oldIndex, obj) -> Void in
+            DataManager.shareManager.editCellQuestion(cellModel: obj as! CellQuestionModel, indexPath: newIndex as! IndexPath)
+            self.refreshTableView(index: oldIndex as! IndexPath)
+        }
+        
+        paperTableView?.multiMarkHandler = {(newIndex, oldIndex, obj) -> Void in
+            self.popMarkView = PopSelectionScoreView(frame: CGRect(x: 0, y: 64, width: LCDW, height: LCDH - 64))
+            self.popMarkView?.initUI(score: (obj as! CellQuestionModel).score)
+            self.view.addSubview(self.popMarkView!)
+            self.popMarkView?.btnHandler = {(score) -> Void in
+                self.popMarkView?.removeFromSuperview()
+                self.popMarkView = nil
+                
+                (obj as! CellQuestionModel).realScore = score as! Float
+                DataManager.shareManager.editCellQuestion(cellModel: obj as! CellQuestionModel, indexPath: newIndex as! IndexPath)
+                self.refreshTableView(index: oldIndex as! IndexPath)
+            }
+        }
+    }
+    
+    func refreshTableView(index : IndexPath){
+        self.paperTableView?.model = DataManager.shareManager.paperModel.copySelf()
+        DispatchQueue.main.async {
+            self.paperTableView?.reloadRows(at: [index], with: .none)
+            self.paperTableView?.reloadSections(IndexSet(integer: index.section), with: .none)
+        }
     }
 
     override func didReceiveMemoryWarning() {

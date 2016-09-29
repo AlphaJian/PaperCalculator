@@ -12,6 +12,9 @@ class ReviewPaperTableView: UITableView, UITableViewDelegate, UITableViewDataSou
 
     var model = DataManager.shareManager.paperModel.copySelf()
     
+    var singleMarkHandler : ReturnWithThreeParmsBlock!
+    var multiMarkHandler : ReturnWithThreeParmsBlock!
+    
     override init(frame: CGRect, style: UITableViewStyle) {
         super.init(frame: frame, style: style)
         self.delegate = self
@@ -57,12 +60,16 @@ class ReviewPaperTableView: UITableView, UITableViewDelegate, UITableViewDataSou
         }
         
         cell.btnHandler = {(newIndex, oldIndex, obj) -> Void in
-            
-            DataManager.shareManager.editCellQuestion(cellModel: obj as! CellQuestionModel, indexPath: newIndex as! NSIndexPath)
-            self.model = DataManager.shareManager.paperModel.copySelf()
-            DispatchQueue.main.async {
-                self.reloadRows(at: [oldIndex as! IndexPath], with: .none)
-                self.reloadSections(IndexSet(integer: oldIndex.section), with: .none)
+            if self.singleMarkHandler != nil
+            {
+                self.singleMarkHandler(newIndex, oldIndex, obj)
+            }
+        }
+        
+        cell.multiBtnHandler = {(newIndex, oldIndex, obj) -> Void in
+            if self.multiMarkHandler != nil
+            {
+                self.multiMarkHandler(newIndex, oldIndex, obj)
             }
         }
         return cell
