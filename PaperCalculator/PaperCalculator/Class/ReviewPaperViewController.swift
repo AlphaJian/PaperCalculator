@@ -18,6 +18,8 @@ class ReviewPaperViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         DataManager.shareManager.mockData()
+        self.title = "总分：\(DataManager.shareManager.paperModel.totalScore!)"
+
         paperTableView = ReviewPaperTableView(frame: self.view.bounds, style: .plain)
         self.view.addSubview(paperTableView!)
         
@@ -44,6 +46,7 @@ class ReviewPaperViewController: UIViewController {
     func refreshTableView(index : IndexPath){
         self.paperTableView?.model = DataManager.shareManager.paperModel.copySelf()
         DispatchQueue.main.async {
+            self.title = "总分：\(DataManager.shareManager.paperModel.totalScore!)"
             self.paperTableView?.reloadRows(at: [index], with: .none)
             self.paperTableView?.reloadSections(IndexSet(integer: index.section), with: .none)
         }
