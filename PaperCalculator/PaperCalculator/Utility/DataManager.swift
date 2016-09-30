@@ -36,6 +36,7 @@ class DataManager: NSObject {
             paperModel.sectionQuestionArr = [SectionQuestionModel]()
         }
         paperModel.sectionQuestionArr.append(sectionModel)
+        paperModel.totalScore = paperModel.totalScore + sectionModel.sectionScore
     }
     
     func editCellQuestion(cellModel : CellQuestionModel, indexPath : IndexPath)
@@ -48,13 +49,15 @@ class DataManager: NSObject {
         
         section.sectionScore = section.sectionScore - oldScore + cellModel.realScore
         paperModel.sectionQuestionArr[indexPath.section] = section
+        paperModel.totalScore = paperModel.totalScore - oldScore + cellModel.realScore
+        
     }
     
     func mockData(){
         createSectionQuestion(numberOfQuestions: 5, score: 2, style: .yesOrNo)
         createSectionQuestion(numberOfQuestions: 10, score: 4, style: .yesOrNo)
-        createSectionQuestion(numberOfQuestions: 4, score: 5, style: .yesOrNo)
-        createSectionQuestion(numberOfQuestions: 3, score: 15, style: .multiScore)
+        createSectionQuestion(numberOfQuestions: 4, score: 5, style: .multiScore)
+        createSectionQuestion(numberOfQuestions: 3, score: 20, style: .multiScore)
     }
 
 }

@@ -14,6 +14,11 @@ class PaperModel : NSObject
     var sectionQuestionArr : [SectionQuestionModel]!
     var totalScore : Float!
     
+    override init(){
+        sectionQuestionArr = [SectionQuestionModel]()
+        totalScore = 0
+    }
+    
     func copySelf() -> PaperModel{
         let newModel = PaperModel()
         

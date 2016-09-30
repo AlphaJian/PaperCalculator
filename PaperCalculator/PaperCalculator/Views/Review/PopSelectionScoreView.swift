@@ -19,13 +19,24 @@ class PopSelectionScoreView: UIView {
         self.addSubview(bg)
         
         let padding = 20
-        let container = UIView(frame: CGRect(x: padding, y: padding, width: Int(self.width()) - padding * 2, height: Int(self.height()) - 2 * padding))
+        let container = UIScrollView(frame: CGRect(x: padding, y: 0, width: Int(self.width()) - padding * 2, height: Int(self.height()) - 2 * padding))
         self.addSubview(container)
         
         var originX = padding
         var originY = padding
-        let width = (Int(container.width()) - padding * 4) / 3
-        for i in 1 ... Int(score) {
+        var width = (Int(container.width()) - padding * 4) / 3
+        var height = 0
+        if Int(score) % 3 == 0
+        {
+            height = (width + padding) * (Int(score) / 3)
+        }
+        else
+        {
+            height = (width + padding) * (Int(score) / 3 + 1)
+        }
+        container.contentSize = CGSize(width: Int(container.width()), height: height)
+
+        for i in 0 ... Int(score) {
             let btn = UIButton(type: .custom)
             btn.frame = CGRect(x: originX, y: originY, width: width, height: width)
             btn.backgroundColor = UIColor.white
@@ -34,8 +45,8 @@ class PopSelectionScoreView: UIView {
             btn.layer.borderWidth = 1
             btn.layer.borderColor = UIColor.blue.cgColor
             btn.addTarget(self, action: "btnTapped:", for: .touchUpInside)
-            btn.tag = 10 + i
-            btn.setTitle("\(i)", for: .normal)
+            btn.tag = 10 + Int(score) - i
+            btn.setTitle("\(Int(score) - i)", for: .normal)
             container.addSubview(btn)
             
             originX = Int(btn.right()) + padding
