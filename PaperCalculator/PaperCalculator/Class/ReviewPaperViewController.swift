@@ -16,7 +16,7 @@ class ReviewPaperViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        DataManager.shareManager.mockData()
+       
         paperTableView = ReviewPaperTableView(frame: self.view.bounds, style: .plain)
         self.view.addSubview(paperTableView!)
         

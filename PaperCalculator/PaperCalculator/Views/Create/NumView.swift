@@ -10,6 +10,7 @@ import UIKit
 
 class NumView: UIView {
 
+    var changeNumHandler : ButtonTouchUpReturnInt?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -45,10 +46,17 @@ class NumView: UIView {
     func addButtonTapped(){
         print("+")
        numLbl.text = "\((numLbl.text! as NSString).intValue + 1)"
+        if changeNumHandler != nil {
+            self.changeNumHandler!(Int((numLbl.text! as NSString).intValue))
+        }
+        
     }
     func minusButtonTapped(){
         print("-")
         numLbl.text = "\((numLbl.text! as NSString).intValue - 1)"
+        if changeNumHandler != nil {
+            self.changeNumHandler!(Int((numLbl.text! as NSString).intValue))
+        }
     }
 
 

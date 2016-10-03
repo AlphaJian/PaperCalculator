@@ -30,6 +30,8 @@ class DataManager: NSObject {
         let sectionModel = SectionQuestionModel()
         sectionModel.cellQuestionArr = arr
         sectionModel.sectionScore = score * Float(numberOfQuestions)
+        sectionModel.editStatus = QuestionStatus.none
+        sectionModel.preSettingQuesScore = Int(score)
         
         if paperModel.sectionQuestionArr == nil
         {
@@ -50,11 +52,15 @@ class DataManager: NSObject {
         paperModel.sectionQuestionArr[indexPath.section] = section
     }
     
+    func removeSectionQuestion(sectionNum : Int){
+        paperModel.sectionQuestionArr.remove(at: sectionNum)
+    }
+    
     func mockData(){
         createSectionQuestion(numberOfQuestions: 5, score: 2, style: .yesOrNo)
-        createSectionQuestion(numberOfQuestions: 10, score: 4, style: .yesOrNo)
-        createSectionQuestion(numberOfQuestions: 4, score: 5, style: .yesOrNo)
-        createSectionQuestion(numberOfQuestions: 3, score: 15, style: .multiScore)
+//        createSectionQuestion(numberOfQuestions: 10, score: 4, style: .yesOrNo)
+//        createSectionQuestion(numberOfQuestions: 4, score: 5, style: .yesOrNo)
+//        createSectionQuestion(numberOfQuestions: 3, score: 15, style: .multiScore)
     }
 
 }

@@ -10,6 +10,7 @@ import UIKit
 
 typealias ButtonTouchUpBlock = () -> Void
 typealias ButtonTouchUpWithParmBlock = (AnyObject) -> Void
+typealias ButtonTouchUpReturnInt = (Int) -> Void
 
 typealias CellTouchUpBlock = (NSIndexPath, AnyObject) -> Void
 
@@ -23,7 +24,8 @@ typealias ReturnWithFourParmsBlock = (AnyObject,AnyObject,AnyObject,AnyObject) -
 
 let LCDW : CGFloat = UIScreen.main.bounds.size.width
 let LCDH : CGFloat = UIScreen.main.bounds.size.height
-
+let textColor : UIColor = UIColor.init(red: 50, green: 50, blue: 50, alpha: 1)
+let buttonColor : UIColor = UIColor.init(red: 50, green: 50, blue: 50, alpha: 1)
 
 let pfont:UIFont = UIFont.init(name: "Roboto-Regular", size: 13)!
 class BlockDefination: NSObject {
