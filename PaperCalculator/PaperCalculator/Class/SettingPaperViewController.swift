@@ -12,19 +12,22 @@ class SettingPaperViewController: UIViewController {
 
     var settingTableView : SettingPaperTableView?
     var settingBotView: SettingBotView?
+    let botViewHeight: CGFloat = 70
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        settingTableView = SettingPaperTableView(frame: self.view.bounds, style: .plain)
+        settingTableView = SettingPaperTableView(frame: CGRect(x: 0, y: 0, width: LCDW, height: LCDH - botViewHeight), style: .plain)
         self.view.addSubview(settingTableView!)
 
-        settingBotView = SettingBotView(frame: CGRect(x: 0, y: LCDH - 80, width: LCDW, height: 80))
+        settingBotView = SettingBotView(frame: CGRect(x: 0, y: LCDH - botViewHeight, width: LCDW, height: botViewHeight))
 settingBotView?.initUI()
         self.view.addSubview(settingBotView!)
         
         settingBotView?.addSectionHandler = {
         
-        }
+         DataManager.shareManager.createSectionQuestion(numberOfQuestions: 2, score: 2, style: .yesOrNo)
+        self.settingTableView?.reloadData()
+         }
         
         
         

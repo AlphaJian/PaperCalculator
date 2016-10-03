@@ -26,6 +26,7 @@
 		BAB2A1DD1D9BAAFD003971E7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB2A1DB1D9BAAFD003971E7 /* MainViewController.swift */; };
 		BAB2A1DE1D9BAAFD003971E7 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAB2A1DC1D9BAAFD003971E7 /* MainViewController.xib */; };
 		BAB2A1E81D9CBBD1003971E7 /* SettingPaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB2A1E71D9CBBD1003971E7 /* SettingPaperViewController.swift */; };
+		BAC71E621D9E291300D2E732 /* EditSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC71E611D9E291300D2E732 /* EditSettingCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		BAB2A1DB1D9BAAFD003971E7 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BAB2A1DC1D9BAAFD003971E7 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		BAB2A1E71D9CBBD1003971E7 /* SettingPaperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingPaperViewController.swift; sourceTree = "<group>"; };
+		BAC71E611D9E291300D2E732 /* EditSettingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSettingCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 		432091141D9D05C0000DDD2E /* Create */ = {
 			isa = PBXGroup;
 			children = (
+				BAC71E611D9E291300D2E732 /* EditSettingCell.swift */,
 				432091151D9D05C0000DDD2E /* NoneSettingCell.swift */,
 				432091161D9D05C0000DDD2E /* NumView.swift */,
 				432091171D9D05C0000DDD2E /* SettingBotView.swift */,
@@ -240,6 +243,7 @@
 				432091251D9D0642000DDD2E /* PopSelectionScoreView.swift in Sources */,
 				4369A1DE1D9CB3A1005850ED /* ViewFrameExtension.swift in Sources */,
 				4320911F1D9D05C0000DDD2E /* SettingBotView.swift in Sources */,
+				BAC71E621D9E291300D2E732 /* EditSettingCell.swift in Sources */,
 				BAB2A1E81D9CBBD1003971E7 /* SettingPaperViewController.swift in Sources */,
 				BAB2A1DA1D9BAACF003971E7 /* BlockDefination.swift in Sources */,
 				436F393F1D9BBF76002ECE19 /* ReviewPaperViewController.swift in Sources */,

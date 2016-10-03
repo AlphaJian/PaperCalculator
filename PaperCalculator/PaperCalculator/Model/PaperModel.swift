@@ -13,6 +13,7 @@ class PaperModel : NSObject
 {
     var sectionQuestionArr : [SectionQuestionModel]!
     var totalScore : Float!
+
     
     override init(){
         sectionQuestionArr = [SectionQuestionModel]()
@@ -25,6 +26,7 @@ class PaperModel : NSObject
         var newsectionArr = [SectionQuestionModel]()
         for obj in sectionQuestionArr {
             let newSection = SectionQuestionModel()
+            newSection.preSettingQuesScore = obj.preSettingQuesScore
             newSection.sectionScore = obj.sectionScore
             newSection.editStatus = obj.editStatus
             
@@ -51,7 +53,7 @@ class PaperModel : NSObject
 class SectionQuestionModel: NSObject {
     var sectionScore : Float!
     var cellQuestionArr : [CellQuestionModel]!
-    
+    var preSettingQuesScore : Int!
     var editStatus : QuestionStatus!
 }
 

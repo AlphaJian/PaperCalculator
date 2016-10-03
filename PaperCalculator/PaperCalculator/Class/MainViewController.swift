@@ -12,10 +12,10 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let view = NumView(frame: CGRect(x: 50, y: 200, width: 100, height: 30))
-        
-        view.initUI(num: 5)
-        self.view.addSubview(view)
+//        let view = NumView(frame: CGRect(x: 50, y: 200, width: 100, height: 30))
+//        
+//        view.initUI(num: 5)
+//        self.view.addSubview(view)
         
         // Do any additional setup after loading the view.
     }

@@ -15,13 +15,11 @@
 
 import UIKit
 
-class NoneSettingCell: UITableViewCell {
+class EditSettingCell: UITableViewCell {
     
     var model = DataManager.shareManager.paperModel
     var index = IndexPath()
     var btnHandler : ButtonTouchUpBlock!
-    var questionNumTemp : Int = 0
-    var markNumTemp : Int = 0
     
     
     override func awakeFromNib() {
@@ -42,63 +40,44 @@ class NoneSettingCell: UITableViewCell {
     func initUI(questionNum: Int, markNum: Int, index : IndexPath){
         self.frame.size.height = 150
         self.index = index
-        questionNumTemp = questionNum
-        markNumTemp = markNum
         
         
-        let questionLabel = UILabel(frame: CGRect(x: 20, y: self.frame.height/9, width: self.frame.height * 0.8, height: self.frame.height/3))
-        questionLabel.text = "题目"
+        for i in 0...questionNum - 1 {
+        
+        let questionLabel = UILabel(frame: CGRect(x: 20, y: 20 + 70 * CGFloat(i) , width: 100, height: 50))
+        questionLabel.text = "题目\(i+1)"
         
         self.addSubview(questionLabel)
         
-        let markLabel = UILabel(frame: CGRect(x: 20, y: self.frame.height/9 * 5, width: self.frame.height * 0.8, height: self.frame.height/3))
-        markLabel.text = "分数"
-        self.addSubview(markLabel)
-        
-        
-        
-        let questionNumView = NumView(frame: CGRect(x: 100, y: self.frame.height/9, width: self.frame.height * 0.8, height: self.frame.height/3))
-        questionNumView.initUI(num: questionNum)
-        self.addSubview(questionNumView)
-        questionNumView.changeNumHandler =  {(number) -> Void in
-        
-            self.questionNumTemp = Int(number)
-
         }
         
+        for i in 0...questionNum - 1 {
         
-        
-        
-        let markNumView = NumView(frame: CGRect(x: 100, y: self.frame.height/9 * 5, width: self.frame.height * 0.8, height: self.frame.height/3))
+        let markNumView = NumView(frame: CGRect(x: 100, y: 20 + 70 * CGFloat(i) , width: 100, height: 50))
         markNumView.initUI(num: markNum)
         self.addSubview(markNumView)
-        markNumView.changeNumHandler =  {(number) -> Void in
-            
-            self.markNumTemp = Int(number as NSNumber)
+        
         }
-
+        
         let button = UIButton(type: .custom)
         button.backgroundColor = UIColor.black
         button.setTitle("确定", for: .normal)
-        button.frame = CGRect(x: 250, y: self.frame.height / 3, width: self.frame.height / 3, height: self.frame.height / 3)
+        button.frame = CGRect(x: 250, y: 20 + 70 * CGFloat(questionNum - 1), width: self.frame.height / 3, height: self.frame.height / 3)
         button.addTarget(self, action: #selector(self.confirmTaped), for: UIControlEvents.touchUpInside)
         
+       
+        
+
         self.addSubview(button)
         
     }
     
     func confirmTaped(){
-        
-        DataManager.shareManager.removeSectionQuestion(sectionNum: index.section)
-        DataManager.shareManager.createSectionQuestion(numberOfQuestions: questionNumTemp, score: Float(markNumTemp), style: .yesOrNo)
-        (model.sectionQuestionArr[index.section] as SectionQuestionModel).editStatus = QuestionStatus.editing
-        
-        
+        (model.sectionQuestionArr[index.section] as SectionQuestionModel).editStatus = QuestionStatus.finish
         if btnHandler != nil {
             btnHandler()
         }
     }
-    
     
     func clearCell(){
         for view in self.contentView.subviews {

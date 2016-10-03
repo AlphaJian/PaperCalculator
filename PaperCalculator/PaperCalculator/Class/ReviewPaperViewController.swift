@@ -17,6 +17,7 @@ class ReviewPaperViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+
         DataManager.shareManager.mockData()
         self.title = "总分：\(DataManager.shareManager.paperModel.totalScore!)"
 

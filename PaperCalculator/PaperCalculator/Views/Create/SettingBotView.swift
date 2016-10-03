@@ -31,7 +31,7 @@ class SettingBotView: UIView {
     func initUI(){
         self.backgroundColor = UIColor.blue
         let addSectionBtn = UIButton(type: .custom)
-        addSectionBtn.frame = CGRect(x: self.frame.midX + 30, y: 20, width: 100, height: 50 )
+        addSectionBtn.frame = CGRect(x: self.frame.midX + 30, y: 10, width: 100, height: 50 )
         addSectionBtn.setTitle("增加", for:.normal )
         addSectionBtn.backgroundColor = UIColor.black
         addSectionBtn.addTarget(self, action: #selector(SettingBotView.addSection), for: UIControlEvents.touchUpInside)
