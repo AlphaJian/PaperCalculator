@@ -47,20 +47,23 @@ class NoneSettingCell: UITableViewCell {
         
         
         let questionLabel = UILabel(frame: CGRect(x: 20, y: self.frame.height/9, width: self.frame.height * 0.8, height: self.frame.height/3))
-        questionLabel.text = "题目"
+        questionLabel.text = "小题数"
+        questionLabel.textColor = lightBlue
         
         self.addSubview(questionLabel)
         
         let markLabel = UILabel(frame: CGRect(x: 20, y: self.frame.height/9 * 5, width: self.frame.height * 0.8, height: self.frame.height/3))
-        markLabel.text = "分数"
+        markLabel.text = "每题/分"
+        markLabel.textColor = lightBlue
+        
         self.addSubview(markLabel)
         
         
         
-        let questionNumView = NumView(frame: CGRect(x: 100, y: self.frame.height/9, width: self.frame.height * 0.8, height: self.frame.height/3))
+        let questionNumView = NumView(frame: CGRect(x: 90, y: self.frame.height/9, width: self.frame.height * 0.8, height: self.frame.height/3))
         questionNumView.initUI(num: questionNum)
         self.addSubview(questionNumView)
-        questionNumView.changeNumHandler =  {(number) -> Void in
+        questionNumView.changeNumHandler =  {(number, index) -> Void in
         
             self.questionNumTemp = Int(number)
 
@@ -69,16 +72,17 @@ class NoneSettingCell: UITableViewCell {
         
         
         
-        let markNumView = NumView(frame: CGRect(x: 100, y: self.frame.height/9 * 5, width: self.frame.height * 0.8, height: self.frame.height/3))
+        let markNumView = NumView(frame: CGRect(x: 90, y: self.frame.height/9 * 5, width: self.frame.height * 0.8, height: self.frame.height/3))
         markNumView.initUI(num: markNum)
         self.addSubview(markNumView)
-        markNumView.changeNumHandler =  {(number) -> Void in
+        markNumView.changeNumHandler =  {(number, index) -> Void in
             
             self.markNumTemp = Int(number as NSNumber)
         }
 
         let button = UIButton(type: .custom)
-        button.backgroundColor = UIColor.black
+        button.backgroundColor = lightRed
+        button.layer.cornerRadius = 10
         button.setTitle("确定", for: .normal)
         button.frame = CGRect(x: 250, y: self.frame.height / 3, width: self.frame.height / 3, height: self.frame.height / 3)
         button.addTarget(self, action: #selector(self.confirmTaped), for: UIControlEvents.touchUpInside)

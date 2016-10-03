@@ -15,7 +15,7 @@ class PopSelectionScoreView: UIView {
     func initUI(score : Float){
         let bg = UIView(frame: self.bounds)
         bg.backgroundColor = UIColor.black
-        bg.alpha = 0.7
+        bg.alpha = 0.8
         self.addSubview(bg)
         
         let padding = 20
@@ -40,11 +40,11 @@ class PopSelectionScoreView: UIView {
             let btn = UIButton(type: .custom)
             btn.frame = CGRect(x: originX, y: originY, width: width, height: width)
             btn.backgroundColor = UIColor.white
-            btn.setTitleColor(UIColor.blue, for: .normal)
+            btn.setTitleColor(lightBlue, for: .normal)
             btn.layer.cornerRadius = btn.width() / 2
-            btn.layer.borderWidth = 1
-            btn.layer.borderColor = UIColor.blue.cgColor
-            btn.addTarget(self, action: "btnTapped:", for: .touchUpInside)
+//            btn.layer.borderWidth = 2
+//            btn.layer.borderColor = lightBlue.cgColor
+            btn.addTarget(self, action: #selector(PopSelectionScoreView.btnTapped(_:)), for: .touchUpInside)
             btn.tag = 10 + Int(score) - i
             btn.setTitle("\(Int(score) - i)", for: .normal)
             container.addSubview(btn)

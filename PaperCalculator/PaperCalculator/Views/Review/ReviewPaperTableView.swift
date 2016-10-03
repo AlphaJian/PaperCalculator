@@ -79,15 +79,15 @@ class ReviewPaperTableView: UITableView, UITableViewDelegate, UITableViewDataSou
         let view = UIView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 40))
         view.backgroundColor = UIColor.white
         let lbl = UILabel(frame: CGRect(x: 20, y: 0, width: view.frame.width - 20, height: 40))
-        lbl.text = "第\(section + 1)大题, 得分\(model.sectionQuestionArr[section].sectionScore!)"
-        lbl.textColor = UIColor.black
+        lbl.text = "第 \(section + 1) 大题, 得分\(model.sectionQuestionArr[section].sectionScore!)"
+        lbl.textColor = darkBlue
         view.addSubview(lbl)
         
         return view
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        return 70
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
