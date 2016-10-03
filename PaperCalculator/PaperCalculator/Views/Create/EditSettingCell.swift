@@ -21,7 +21,6 @@ class EditSettingCell: UITableViewCell {
     var index = IndexPath()
     var btnHandler : ButtonTouchUpBlock!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -42,26 +41,48 @@ class EditSettingCell: UITableViewCell {
         self.index = index
         
         
-        for i in 0...questionNum - 1 {
         
-        let questionLabel = UILabel(frame: CGRect(x: 20, y: 20 + 70 * CGFloat(i) , width: 100, height: 50))
-        questionLabel.text = "题目\(i+1)"
-        
-        self.addSubview(questionLabel)
-        
-        }
         
         for i in 0...questionNum - 1 {
-        
-        let markNumView = NumView(frame: CGRect(x: 100, y: 20 + 70 * CGFloat(i) , width: 100, height: 50))
+
+            let questionLabel = UILabel(frame: CGRect(x: 20, y: 20 + 70 * CGFloat(i) , width: 100, height: 50))
+            questionLabel.text = "第 \(i+1) 题"
+            questionLabel.textColor = lightBlue
+            
+            self.addSubview(questionLabel)
+            
+            let typeSwitch = UISwitch(frame: CGRect(x: 195, y: 20 + 70 * CGFloat(i), width: 50, height: 50))
+           // typeSwitch.tintColor = lightBlue
+            typeSwitch.onTintColor = lightBlue
+            typeSwitch.transform.scaledBy(x: 0.75, y: 0.75)
+            typeSwitch.isOn = ((model.sectionQuestionArr[index.section] as SectionQuestionModel).cellQuestionArr[i] as CellQuestionModel).questionStyle == QuestionStyle.multiScore
+            typeSwitch.tag = i + 10
+            
+            typeSwitch.addTarget(self, action: #selector(self.typeChanged(_:)), for: UIControlEvents.valueChanged)
+            
+          
+            
+            self.addSubview(typeSwitch)
+            
+        let markNumView = NumView(frame: CGRect(x: 90, y: 20 + 70 * CGFloat(i) , width: 100, height: 50))
+            
         markNumView.initUI(num: markNum)
+        markNumView.index = i
         self.addSubview(markNumView)
+            let tempArr = (model.sectionQuestionArr[index.section] as SectionQuestionModel).cellQuestionArr
+            markNumView.changeNumHandler = {(num, index)-> Void in
+                (tempArr![index] as CellQuestionModel).score = Float(num)
+            }
+        
         
         }
         
         let button = UIButton(type: .custom)
-        button.backgroundColor = UIColor.black
+       
         button.setTitle("确定", for: .normal)
+        button.backgroundColor = lightRed
+        button.layer.cornerRadius = 10
+        
         button.frame = CGRect(x: 250, y: 20 + 70 * CGFloat(questionNum - 1), width: self.frame.height / 3, height: self.frame.height / 3)
         button.addTarget(self, action: #selector(self.confirmTaped), for: UIControlEvents.touchUpInside)
         
@@ -72,8 +93,24 @@ class EditSettingCell: UITableViewCell {
         
     }
     
+    func typeChanged(_ sender : UISwitch){
+    
+        if sender.isOn {
+            ((model.sectionQuestionArr[index.section] as SectionQuestionModel).cellQuestionArr[sender.tag - 10] as CellQuestionModel).questionStyle = QuestionStyle.multiScore
+        } else {
+            ((model.sectionQuestionArr[index.section] as SectionQuestionModel).cellQuestionArr[sender.tag - 10] as CellQuestionModel).questionStyle = QuestionStyle.yesOrNo
+        }
+        
+    }
+    
+    
+    
     func confirmTaped(){
         (model.sectionQuestionArr[index.section] as SectionQuestionModel).editStatus = QuestionStatus.finish
+        
+        
+        
+        
         if btnHandler != nil {
             btnHandler()
         }

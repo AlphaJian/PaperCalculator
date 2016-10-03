@@ -43,8 +43,9 @@ class QuestionTableViewCell: UITableViewCell {
             let model = questionArr[i]
 
             let btn = UIButton(type: .custom)
-            btn.frame = CGRect(x: originX, y: 0, width: Int(width), height: 40)
-            btn.setTitle("第\(model.questionNo!)小题,\(model.realScore!)", for: .normal)
+            btn.layer.cornerRadius = 10
+            btn.frame = CGRect(x: originX, y: 0, width: Int(width), height: 60)
+            btn.setTitle("第 \(model.questionNo!) 小题, \(model.realScore!)", for: .normal)
             btn.titleLabel?.backgroundColor = UIColor.clear
             btn.addTarget(self, action: "btnTapped:", for: .touchUpInside)
             btn.tag = 10 + i
@@ -54,11 +55,11 @@ class QuestionTableViewCell: UITableViewCell {
             
             if model.realScore < model.score
             {
-                btn.backgroundColor = UIColor.red
+                btn.backgroundColor = lightRed
             }
             else
             {
-                btn.backgroundColor = UIColor.green
+                btn.backgroundColor = lightBlue
             }
         }
     }

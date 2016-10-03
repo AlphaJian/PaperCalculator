@@ -42,6 +42,8 @@ class SettingPaperTableView: UITableView, UITableViewDelegate, UITableViewDataSo
             
             cell.clearCell()
             
+            cell.selectionStyle = .none
+            
             cell.initUI(questionNum: (model.sectionQuestionArr[indexPath.section].cellQuestionArr as NSArray).count , markNum: model.sectionQuestionArr[indexPath.section].preSettingQuesScore , index: indexPath)
             cell.btnHandler = {
                 self.reloadData()
@@ -53,6 +55,7 @@ class SettingPaperTableView: UITableView, UITableViewDelegate, UITableViewDataSo
             let cell = tableView.dequeueReusableCell(withIdentifier: "noneCell") as! NoneSettingCell
             
             cell.clearCell()
+             cell.selectionStyle = .none
             
             cell.initUI(questionNum: (model.sectionQuestionArr[indexPath.section].cellQuestionArr as NSArray).count , markNum: 5, index: indexPath)
             
@@ -73,10 +76,11 @@ class SettingPaperTableView: UITableView, UITableViewDelegate, UITableViewDataSo
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 40))
         let titleLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 100, height: 20))
-        titleLabel.text = "第\(section + 1)大题"
+        titleLabel.text = "第 \(section + 1) 大题"
+        titleLabel.textColor = UIColor.white
         view.addSubview(titleLabel)
         
-        view.backgroundColor = UIColor.red
+        view.backgroundColor = UIColor.darkGray
         return view
     }
     

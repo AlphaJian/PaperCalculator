@@ -22,7 +22,12 @@ class DataManager: NSObject {
             qModel.questionNo = i + 1
             qModel.score = score
             qModel.realScore = score
+            
+            if qModel.score >= 5 {
+            qModel.questionStyle = QuestionStyle.multiScore
+            } else {
             qModel.questionStyle = style
+            }
             
             arr.append(qModel)
         }
