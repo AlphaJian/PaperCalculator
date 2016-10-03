@@ -38,9 +38,10 @@ class DataManager: NSObject {
             paperModel.sectionQuestionArr = [SectionQuestionModel]()
         }
         paperModel.sectionQuestionArr.append(sectionModel)
+        paperModel.totalScore = paperModel.totalScore + sectionModel.sectionScore
     }
     
-    func editCellQuestion(cellModel : CellQuestionModel, indexPath : NSIndexPath)
+    func editCellQuestion(cellModel : CellQuestionModel, indexPath : IndexPath)
     {
         let section = paperModel.sectionQuestionArr[indexPath.section]
         
@@ -50,6 +51,8 @@ class DataManager: NSObject {
         
         section.sectionScore = section.sectionScore - oldScore + cellModel.realScore
         paperModel.sectionQuestionArr[indexPath.section] = section
+        paperModel.totalScore = paperModel.totalScore - oldScore + cellModel.realScore
+        
     }
     
     func removeSectionQuestion(sectionNum : Int){
@@ -61,6 +64,7 @@ class DataManager: NSObject {
 //        createSectionQuestion(numberOfQuestions: 10, score: 4, style: .yesOrNo)
 //        createSectionQuestion(numberOfQuestions: 4, score: 5, style: .yesOrNo)
 //        createSectionQuestion(numberOfQuestions: 3, score: 15, style: .multiScore)
+
     }
 
 }

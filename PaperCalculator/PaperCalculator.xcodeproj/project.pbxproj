@@ -14,6 +14,7 @@
 		432091211D9D05C0000DDD2E /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432091191D9D05C0000DDD2E /* SettingTableViewCell.swift */; };
 		432091221D9D05C0000DDD2E /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4320911B1D9D05C0000DDD2E /* QuestionTableViewCell.swift */; };
 		432091231D9D05C0000DDD2E /* ReviewPaperTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4320911C1D9D05C0000DDD2E /* ReviewPaperTableView.swift */; };
+		432091251D9D0642000DDD2E /* PopSelectionScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432091241D9D0642000DDD2E /* PopSelectionScoreView.swift */; };
 		4369A1DE1D9CB3A1005850ED /* ViewFrameExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4369A1DB1D9CB3A1005850ED /* ViewFrameExtension.swift */; };
 		436F393C1D9BBEAA002ECE19 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436F393B1D9BBEAA002ECE19 /* DataManager.swift */; };
 		436F393F1D9BBF76002ECE19 /* ReviewPaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436F393E1D9BBF76002ECE19 /* ReviewPaperViewController.swift */; };
@@ -36,6 +37,7 @@
 		432091191D9D05C0000DDD2E /* SettingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		4320911B1D9D05C0000DDD2E /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
 		4320911C1D9D05C0000DDD2E /* ReviewPaperTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewPaperTableView.swift; sourceTree = "<group>"; };
+		432091241D9D0642000DDD2E /* PopSelectionScoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopSelectionScoreView.swift; sourceTree = "<group>"; };
 		4369A1DB1D9CB3A1005850ED /* ViewFrameExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewFrameExtension.swift; sourceTree = "<group>"; };
 		436F393B1D9BBEAA002ECE19 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		436F393E1D9BBF76002ECE19 /* ReviewPaperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewPaperViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 			children = (
 				4320911B1D9D05C0000DDD2E /* QuestionTableViewCell.swift */,
 				4320911C1D9D05C0000DDD2E /* ReviewPaperTableView.swift */,
+				432091241D9D0642000DDD2E /* PopSelectionScoreView.swift */,
 			);
 			path = Review;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 			files = (
 				436F393C1D9BBEAA002ECE19 /* DataManager.swift in Sources */,
 				4320911E1D9D05C0000DDD2E /* NumView.swift in Sources */,
+				432091251D9D0642000DDD2E /* PopSelectionScoreView.swift in Sources */,
 				4369A1DE1D9CB3A1005850ED /* ViewFrameExtension.swift in Sources */,
 				4320911F1D9D05C0000DDD2E /* SettingBotView.swift in Sources */,
 				BAC71E621D9E291300D2E732 /* EditSettingCell.swift in Sources */,
