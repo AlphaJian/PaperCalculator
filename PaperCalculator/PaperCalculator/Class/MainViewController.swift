@@ -28,6 +28,7 @@ class MainViewController: UIViewController {
     
 
     @IBAction func pi(_ sender: AnyObject) {
+        DataManager.shareManager.paperModelTemp = DataManager.shareManager.paperModel.copySelf()
         let vc = ReviewPaperViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }

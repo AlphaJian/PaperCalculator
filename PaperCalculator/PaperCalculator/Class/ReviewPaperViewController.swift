@@ -41,6 +41,12 @@ class ReviewPaperViewController: UIViewController {
                 self.refreshTableView(index: oldIndex as! IndexPath)
             }
         }
+        paperTableView?.nextPaperHandler = {
+            self.paperTableView?.model = DataManager.shareManager.paperModelTemp.copySelf()
+            
+            self.paperTableView?.reloadData()
+        }
+        
     }
     
     func refreshTableView(index : IndexPath){
