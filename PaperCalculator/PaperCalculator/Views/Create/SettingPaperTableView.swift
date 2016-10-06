@@ -19,7 +19,7 @@ class SettingPaperTableView: UITableView, UITableViewDelegate, UITableViewDataSo
         self.dataSource = self
         self.register(NoneSettingCell.classForCoder(), forCellReuseIdentifier: "noneCell")
         self.register(EditSettingCell.classForCoder(), forCellReuseIdentifier: "editCell")
-        
+        self.separatorStyle = .none
     }
     
     required init?(coder aDecoder: NSCoder) {

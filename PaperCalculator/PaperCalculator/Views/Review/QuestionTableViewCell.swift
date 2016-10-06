@@ -12,8 +12,10 @@ class QuestionTableViewCell: UITableViewCell {
 
     var btnHandler : ReturnWithThreeParmsBlock!
     var multiBtnHandler : ReturnWithThreeParmsBlock!
+    var nextPaperHandler : ButtonTouchUpBlock!
     var indexPath : IndexPath!
     var questionArr : [CellQuestionModel]!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,6 +31,36 @@ class QuestionTableViewCell: UITableViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    
+    func initLastCell (){
+    
+        let btn = UIButton(type: .custom)
+        btn.layer.cornerRadius = 10
+        btn.frame = CGRect(x: LCDW - 10 - 100, y: 0, width: 100, height: 60)
+        btn.backgroundColor = darkBlue
+        btn.setTitle("批改下一个", for: .normal)
+         btn.addTarget(self, action: #selector(QuestionTableViewCell.nextBtnTapped), for: .touchUpInside)
+        self.contentView.addSubview(btn)
+ 
+    }
+    
+    func nextBtnTapped() {
+        let paperModelSave : PaperModel = DataManager.shareManager.paperModel.copySelf()
+        DataManager.shareManager.papersArray.append(paperModelSave)
+        DataManager.shareManager.paperModel = DataManager.shareManager.paperModelTemp.copySelf()
+        if nextPaperHandler != nil {
+        
+        nextPaperHandler!()
+        }
+        
+        
+    }
+    
+    
+    
+    
+    
     
     func initUI(arr : [CellQuestionModel], index : IndexPath){
         questionArr = arr

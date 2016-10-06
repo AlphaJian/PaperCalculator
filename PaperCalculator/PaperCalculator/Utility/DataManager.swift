@@ -9,8 +9,10 @@
 import UIKit
 
 class DataManager: NSObject {
-
+    var papersArray = [PaperModel]()
     var paperModel = PaperModel()
+    var paperNum = 0
+    var paperModelTemp = PaperModel()
     
     static let shareManager = DataManager()
     

@@ -14,6 +14,7 @@ class ReviewPaperTableView: UITableView, UITableViewDelegate, UITableViewDataSou
     
     var singleMarkHandler : ReturnWithThreeParmsBlock!
     var multiMarkHandler : ReturnWithThreeParmsBlock!
+    var nextPaperHandler : ButtonTouchUpBlock!
     
     override init(frame: CGRect, style: UITableViewStyle) {
         super.init(frame: frame, style: style)
@@ -33,13 +34,27 @@ class ReviewPaperTableView: UITableView, UITableViewDelegate, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let sectionModel = model.sectionQuestionArr[section]
-        if sectionModel.cellQuestionArr.count % 2 == 0
-        {
-            return sectionModel.cellQuestionArr.count / 2
-        }
-        else
-        {
-            return sectionModel.cellQuestionArr.count / 2 + 1
+        
+        if section == model.sectionQuestionArr.count - 1 {
+            if sectionModel.cellQuestionArr.count % 2 == 0
+            {
+                return sectionModel.cellQuestionArr.count / 2 + 1
+            }
+            else
+            {
+                return sectionModel.cellQuestionArr.count / 2 + 2
+            }
+            
+        } else {
+            
+            if sectionModel.cellQuestionArr.count % 2 == 0
+            {
+                return sectionModel.cellQuestionArr.count / 2
+            }
+            else
+            {
+                return sectionModel.cellQuestionArr.count / 2 + 1
+            }
         }
     }
     
@@ -49,6 +64,23 @@ class ReviewPaperTableView: UITableView, UITableViewDelegate, UITableViewDataSou
         let cellArr = model.sectionQuestionArr[indexPath.section].cellQuestionArr as [CellQuestionModel]
         
         cell.clearCell()
+        
+        
+        if indexPath.section == model.sectionQuestionArr.count - 1 && indexPath.row == model.sectionQuestionArr[model.sectionQuestionArr.count - 1].cellQuestionArr.count - 1 {
+        
+        cell.initLastCell()
+            cell.nextPaperHandler = {
+                if self.nextPaperHandler != nil {
+                self.nextPaperHandler!()
+                }
+            
+            }
+            return cell
+        
+        
+        } else {
+        
+        
         
         if indexPath.row * 2 + 1 < cellArr.count
         {
@@ -72,7 +104,8 @@ class ReviewPaperTableView: UITableView, UITableViewDelegate, UITableViewDataSou
                 self.multiMarkHandler(newIndex, oldIndex, obj)
             }
         }
-        return cell
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
