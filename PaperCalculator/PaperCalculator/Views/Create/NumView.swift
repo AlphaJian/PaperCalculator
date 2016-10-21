@@ -40,7 +40,6 @@ class NumView: UIView {
         
         numLbl.frame = CGRect(x: self.frame.width/3, y: 0, width: self.frame.width/3, height: self.frame.height)
         numLbl.textAlignment = NSTextAlignment.center
-//        let numLbl = UILabel(frame: CGRect(x: self.frame.width/3, y: 0, width: self.frame.width/3, height: self.frame.height))
         numLbl.text = "\(num)"
         numLbl.textColor = UIColor.white
         self.addSubview(numLbl)

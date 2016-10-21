@@ -50,17 +50,17 @@ class NoneSettingCell: UITableViewCell {
         questionLabel.text = "小题数"
         questionLabel.textColor = lightBlue
         
-        self.addSubview(questionLabel)
+        self.contentView.addSubview(questionLabel)
         
         let markLabel = UILabel(frame: CGRect(x: 20, y: self.frame.height/9 * 5, width: self.frame.height * 0.8, height: self.frame.height/3))
         markLabel.text = "每题/分"
         markLabel.textColor = lightBlue
         
-        self.addSubview(markLabel)
+        self.contentView.addSubview(markLabel)
         
         
         
-        let questionNumView = NumView(frame: CGRect(x: 90, y: self.frame.height/9, width: self.frame.height * 0.8, height: self.frame.height/3))
+        let questionNumView = NumView(frame: CGRect(x: 100, y: self.frame.height/9, width: self.frame.height * 0.8, height: self.frame.height/3))
         questionNumView.initUI(num: questionNum)
         self.addSubview(questionNumView)
         questionNumView.changeNumHandler =  {(number, index) -> Void in
@@ -72,7 +72,7 @@ class NoneSettingCell: UITableViewCell {
         
         
         
-        let markNumView = NumView(frame: CGRect(x: 90, y: self.frame.height/9 * 5, width: self.frame.height * 0.8, height: self.frame.height/3))
+        let markNumView = NumView(frame: CGRect(x: 100, y: self.frame.height/9 * 5, width: self.frame.height * 0.8, height: self.frame.height/3))
         markNumView.initUI(num: markNum)
         self.addSubview(markNumView)
         markNumView.changeNumHandler =  {(number, index) -> Void in
@@ -84,16 +84,19 @@ class NoneSettingCell: UITableViewCell {
         button.backgroundColor = lightRed
         button.layer.cornerRadius = 10
         button.setTitle("确定", for: .normal)
-        button.frame = CGRect(x: 250, y: self.frame.height / 3, width: self.frame.height / 3, height: self.frame.height / 3)
+        button.titleLabel?.font = mediumFont
+        button.frame = CGRect(x: 300, y: self.frame.height / 3, width: self.frame.height / 3, height: self.frame.height / 3)
         button.addTarget(self, action: #selector(self.confirmTaped), for: UIControlEvents.touchUpInside)
         
-        self.addSubview(button)
+        self.contentView.addSubview(button)
         
     }
     
     func confirmTaped(){
         
+       
         DataManager.shareManager.removeSectionQuestion(sectionNum: index.section)
+        
         DataManager.shareManager.createSectionQuestion(numberOfQuestions: questionNumTemp, score: Float(markNumTemp), style: .yesOrNo)
         (model.sectionQuestionArr[index.section] as SectionQuestionModel).editStatus = QuestionStatus.editing
         

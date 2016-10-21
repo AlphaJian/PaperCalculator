@@ -18,7 +18,7 @@ class ReviewPaperViewController: UIViewController {
 
         // Do any additional setup after loading the view.
 
-        self.title = "总分：\(DataManager.shareManager.paperModel.totalScore!)"
+        self.title = "\(DataManager.shareManager.paperNum)号 \(DataManager.shareManager.paperModel.totalScore!)分  " + DataManager.shareManager.paperModel.grade
 
         paperTableView = ReviewPaperTableView(frame: self.view.bounds, style: .plain)
         self.view.addSubview(paperTableView!)
@@ -43,7 +43,9 @@ class ReviewPaperViewController: UIViewController {
         }
         paperTableView?.nextPaperHandler = {
             self.paperTableView?.model = DataManager.shareManager.paperModelTemp.copySelf()
-            
+            DataManager.shareManager.getGrade()
+            DataManager.shareManager.paperNum = DataManager.shareManager.paperNum + 1
+            self.title = "\(DataManager.shareManager.paperNum)号 \(DataManager.shareManager.paperModel.totalScore!)分  " + DataManager.shareManager.paperModel.grade
             self.paperTableView?.reloadData()
         }
         
@@ -52,7 +54,7 @@ class ReviewPaperViewController: UIViewController {
     func refreshTableView(index : IndexPath){
         self.paperTableView?.model = DataManager.shareManager.paperModel.copySelf()
         DispatchQueue.main.async {
-            self.title = "总分：\(DataManager.shareManager.paperModel.totalScore!)"
+            self.title = "\(DataManager.shareManager.paperNum)号 \(DataManager.shareManager.paperModel.totalScore!)分  " + DataManager.shareManager.paperModel.grade
             self.paperTableView?.reloadRows(at: [index], with: .none)
             self.paperTableView?.reloadSections(IndexSet(integer: index.section), with: .none)
         }

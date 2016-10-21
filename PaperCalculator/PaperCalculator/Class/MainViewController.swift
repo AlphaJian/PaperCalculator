@@ -10,12 +10,24 @@ import UIKit
 
 class MainViewController: UIViewController {
 
+   
+    
+    @IBOutlet weak var btn1: UIButton!
+    
+    @IBOutlet weak var btn2: UIButton!
+    
+    @IBOutlet weak var btn3: UIButton!
+    
+    @IBOutlet weak var btn4: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let view = NumView(frame: CGRect(x: 50, y: 200, width: 100, height: 30))
-//        
-//        view.initUI(num: 5)
-//        self.view.addSubview(view)
+        btn1.layer.cornerRadius = 10
+        btn2.layer.cornerRadius = 10
+        btn3.layer.cornerRadius = 10
+        btn4.layer.cornerRadius = 10
+        
         
         // Do any additional setup after loading the view.
     }
@@ -28,7 +40,7 @@ class MainViewController: UIViewController {
     
 
     @IBAction func pi(_ sender: AnyObject) {
-        DataManager.shareManager.paperModelTemp = DataManager.shareManager.paperModel.copySelf()
+       
         let vc = ReviewPaperViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
@@ -40,7 +52,20 @@ class MainViewController: UIViewController {
     }
     
     
+    @IBAction func checkReport(_ sender: AnyObject) {
+        let vc = ReportViewController()
+        DataManager.shareManager.getRank()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
+    @IBAction func checkCharts(_ sender: AnyObject) {
+    
+        let vc = ChartsViewController()
+        DataManager.shareManager.getStatistics()
+        self.navigationController?.pushViewController(vc, animated: true)
+    
+    
+    }
     /*
     // MARK: - Navigation
 

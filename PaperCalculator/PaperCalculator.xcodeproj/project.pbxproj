@@ -18,16 +18,69 @@
 		4369A1DE1D9CB3A1005850ED /* ViewFrameExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4369A1DB1D9CB3A1005850ED /* ViewFrameExtension.swift */; };
 		436F393C1D9BBEAA002ECE19 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436F393B1D9BBEAA002ECE19 /* DataManager.swift */; };
 		436F393F1D9BBF76002ECE19 /* ReviewPaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436F393E1D9BBF76002ECE19 /* ReviewPaperViewController.swift */; };
+		BA170FC91DAE119E009C5305 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA170FC81DAE119E009C5305 /* Launch Screen.storyboard */; };
 		BAB2A1C11D9BA814003971E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB2A1C01D9BA814003971E7 /* AppDelegate.swift */; };
 		BAB2A1C81D9BA814003971E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAB2A1C71D9BA814003971E7 /* Assets.xcassets */; };
-		BAB2A1D31D9BAAB0003971E7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAB2A1D21D9BAAB0003971E7 /* Default-568h@2x.png */; };
 		BAB2A1D71D9BAAC3003971E7 /* PaperModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB2A1D61D9BAAC3003971E7 /* PaperModel.swift */; };
 		BAB2A1DA1D9BAACF003971E7 /* BlockDefination.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB2A1D91D9BAACF003971E7 /* BlockDefination.swift */; };
 		BAB2A1DD1D9BAAFD003971E7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB2A1DB1D9BAAFD003971E7 /* MainViewController.swift */; };
 		BAB2A1DE1D9BAAFD003971E7 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAB2A1DC1D9BAAFD003971E7 /* MainViewController.xib */; };
 		BAB2A1E81D9CBBD1003971E7 /* SettingPaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB2A1E71D9CBBD1003971E7 /* SettingPaperViewController.swift */; };
 		BAC71E621D9E291300D2E732 /* EditSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC71E611D9E291300D2E732 /* EditSettingCell.swift */; };
+		BADD01DD1DAC9FCB00DC8987 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADD01DC1DAC9FCB00DC8987 /* ReportViewController.swift */; };
+		BADD01E01DACAC5400DC8987 /* QuestionReportTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADD01DF1DACAC5400DC8987 /* QuestionReportTableView.swift */; };
+		BADD01E21DACB05200DC8987 /* QuestionReportTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADD01E11DACB05200DC8987 /* QuestionReportTableViewCell.swift */; };
+		BADD03821DACCE5800DC8987 /* ChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADD03801DACCE5800DC8987 /* ChartsViewController.swift */; };
+		BADD03831DACCE5800DC8987 /* ChartsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BADD03811DACCE5800DC8987 /* ChartsViewController.xib */; };
+		BADD03961DACD12500DC8987 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BADD03911DACD12100DC8987 /* Charts.framework */; };
+		BADD03971DACD12500DC8987 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BADD03911DACD12100DC8987 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BADE20EA1DB0BDD7001DD53D /* RankReportTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADE20E91DB0BDD7001DD53D /* RankReportTableViewCell.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BADD03901DACD12100DC8987 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BADD038A1DACD12000DC8987 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06165F241D8110E600722320;
+			remoteInfo = Charts;
+		};
+		BADD03921DACD12100DC8987 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BADD038A1DACD12000DC8987 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06B120D51D811E6200D14B02;
+			remoteInfo = ChartsRealm;
+		};
+		BADD03941DACD12100DC8987 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BADD038A1DACD12000DC8987 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06165F2E1D8110E600722320;
+			remoteInfo = ChartsTests;
+		};
+		BADD03981DACD12500DC8987 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BADD038A1DACD12000DC8987 /* Charts.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 06165F231D8110E600722320;
+			remoteInfo = Charts;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BADD03891DACD0E400DC8987 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BADD03971DACD12500DC8987 /* Charts.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		432091151D9D05C0000DDD2E /* NoneSettingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoneSettingCell.swift; sourceTree = "<group>"; };
@@ -41,17 +94,24 @@
 		4369A1DB1D9CB3A1005850ED /* ViewFrameExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewFrameExtension.swift; sourceTree = "<group>"; };
 		436F393B1D9BBEAA002ECE19 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		436F393E1D9BBF76002ECE19 /* ReviewPaperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewPaperViewController.swift; sourceTree = "<group>"; };
+		BA170FC81DAE119E009C5305 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		BAB2A1BD1D9BA814003971E7 /* PaperCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PaperCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB2A1C01D9BA814003971E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAB2A1C71D9BA814003971E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BAB2A1CC1D9BA814003971E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BAB2A1D21D9BAAB0003971E7 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		BAB2A1D61D9BAAC3003971E7 /* PaperModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaperModel.swift; sourceTree = "<group>"; };
 		BAB2A1D91D9BAACF003971E7 /* BlockDefination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockDefination.swift; sourceTree = "<group>"; };
 		BAB2A1DB1D9BAAFD003971E7 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BAB2A1DC1D9BAAFD003971E7 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		BAB2A1E71D9CBBD1003971E7 /* SettingPaperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingPaperViewController.swift; sourceTree = "<group>"; };
 		BAC71E611D9E291300D2E732 /* EditSettingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSettingCell.swift; sourceTree = "<group>"; };
+		BADD01DC1DAC9FCB00DC8987 /* ReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
+		BADD01DF1DACAC5400DC8987 /* QuestionReportTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionReportTableView.swift; path = PaperCalculator/Views/Report/QuestionReportTableView.swift; sourceTree = SOURCE_ROOT; };
+		BADD01E11DACB05200DC8987 /* QuestionReportTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionReportTableViewCell.swift; path = PaperCalculator/Views/Report/QuestionReportTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		BADD03801DACCE5800DC8987 /* ChartsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartsViewController.swift; sourceTree = "<group>"; };
+		BADD03811DACCE5800DC8987 /* ChartsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChartsViewController.xib; sourceTree = "<group>"; };
+		BADD038A1DACD12000DC8987 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = "<group>"; };
+		BADE20E91DB0BDD7001DD53D /* RankReportTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RankReportTableViewCell.swift; path = PaperCalculator/Views/Report/RankReportTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BADD03961DACD12500DC8987 /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +162,7 @@
 			children = (
 				432091141D9D05C0000DDD2E /* Create */,
 				4320911A1D9D05C0000DDD2E /* Review */,
+				BADD01DE1DACAC0000DC8987 /* Report */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -108,6 +170,7 @@
 		BAB2A1B41D9BA814003971E7 = {
 			isa = PBXGroup;
 			children = (
+				BA170FC81DAE119E009C5305 /* Launch Screen.storyboard */,
 				BAB2A1BF1D9BA814003971E7 /* PaperCalculator */,
 				BAB2A1BE1D9BA814003971E7 /* Products */,
 			);
@@ -124,6 +187,7 @@
 		BAB2A1BF1D9BA814003971E7 /* PaperCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				BADD038A1DACD12000DC8987 /* Charts.xcodeproj */,
 				4369A1D81D9CB3A1005850ED /* Extension */,
 				436F393D1D9BBF1D002ECE19 /* Views */,
 				BAB2A1D41D9BAABC003971E7 /* Class */,
@@ -131,7 +195,6 @@
 				BAB2A1D51D9BAAC3003971E7 /* Model */,
 				BAB2A1C01D9BA814003971E7 /* AppDelegate.swift */,
 				BAB2A1C71D9BA814003971E7 /* Assets.xcassets */,
-				BAB2A1D21D9BAAB0003971E7 /* Default-568h@2x.png */,
 				BAB2A1CC1D9BA814003971E7 /* Info.plist */,
 			);
 			path = PaperCalculator;
@@ -144,6 +207,9 @@
 				BAB2A1DC1D9BAAFD003971E7 /* MainViewController.xib */,
 				436F393E1D9BBF76002ECE19 /* ReviewPaperViewController.swift */,
 				BAB2A1E71D9CBBD1003971E7 /* SettingPaperViewController.swift */,
+				BADD03801DACCE5800DC8987 /* ChartsViewController.swift */,
+				BADD03811DACCE5800DC8987 /* ChartsViewController.xib */,
+				BADD01DC1DAC9FCB00DC8987 /* ReportViewController.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -165,6 +231,27 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		BADD01DE1DACAC0000DC8987 /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				BADD01DF1DACAC5400DC8987 /* QuestionReportTableView.swift */,
+				BADE20E91DB0BDD7001DD53D /* RankReportTableViewCell.swift */,
+				BADD01E11DACB05200DC8987 /* QuestionReportTableViewCell.swift */,
+			);
+			name = Report;
+			path = Review/Report;
+			sourceTree = "<group>";
+		};
+		BADD038B1DACD12000DC8987 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BADD03911DACD12100DC8987 /* Charts.framework */,
+				BADD03931DACD12100DC8987 /* ChartsRealm.framework */,
+				BADD03951DACD12100DC8987 /* ChartsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -175,10 +262,12 @@
 				BAB2A1B91D9BA814003971E7 /* Sources */,
 				BAB2A1BA1D9BA814003971E7 /* Frameworks */,
 				BAB2A1BB1D9BA814003971E7 /* Resources */,
+				BADD03891DACD0E400DC8987 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				BADD03991DACD12500DC8987 /* PBXTargetDependency */,
 			);
 			name = PaperCalculator;
 			productName = PaperCalculator;
@@ -198,7 +287,7 @@
 					BAB2A1BC1D9BA814003971E7 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 382ASS7UAT;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -213,6 +302,12 @@
 			mainGroup = BAB2A1B41D9BA814003971E7;
 			productRefGroup = BAB2A1BE1D9BA814003971E7 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = BADD038B1DACD12000DC8987 /* Products */;
+					ProjectRef = BADD038A1DACD12000DC8987 /* Charts.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				BAB2A1BC1D9BA814003971E7 /* PaperCalculator */,
@@ -220,14 +315,39 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		BADD03911DACD12100DC8987 /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = BADD03901DACD12100DC8987 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BADD03931DACD12100DC8987 /* ChartsRealm.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ChartsRealm.framework;
+			remoteRef = BADD03921DACD12100DC8987 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BADD03951DACD12100DC8987 /* ChartsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ChartsTests.xctest;
+			remoteRef = BADD03941DACD12100DC8987 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		BAB2A1BB1D9BA814003971E7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA170FC91DAE119E009C5305 /* Launch Screen.storyboard in Resources */,
 				BAB2A1C81D9BA814003971E7 /* Assets.xcassets in Resources */,
 				BAB2A1DE1D9BAAFD003971E7 /* MainViewController.xib in Resources */,
-				BAB2A1D31D9BAAB0003971E7 /* Default-568h@2x.png in Resources */,
+				BADD03831DACCE5800DC8987 /* ChartsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,15 +363,20 @@
 				432091251D9D0642000DDD2E /* PopSelectionScoreView.swift in Sources */,
 				4369A1DE1D9CB3A1005850ED /* ViewFrameExtension.swift in Sources */,
 				4320911F1D9D05C0000DDD2E /* SettingBotView.swift in Sources */,
+				BADD03821DACCE5800DC8987 /* ChartsViewController.swift in Sources */,
 				BAC71E621D9E291300D2E732 /* EditSettingCell.swift in Sources */,
 				BAB2A1E81D9CBBD1003971E7 /* SettingPaperViewController.swift in Sources */,
 				BAB2A1DA1D9BAACF003971E7 /* BlockDefination.swift in Sources */,
 				436F393F1D9BBF76002ECE19 /* ReviewPaperViewController.swift in Sources */,
 				BAB2A1C11D9BA814003971E7 /* AppDelegate.swift in Sources */,
+				BADE20EA1DB0BDD7001DD53D /* RankReportTableViewCell.swift in Sources */,
+				BADD01E01DACAC5400DC8987 /* QuestionReportTableView.swift in Sources */,
 				432091211D9D05C0000DDD2E /* SettingTableViewCell.swift in Sources */,
 				4320911D1D9D05C0000DDD2E /* NoneSettingCell.swift in Sources */,
+				BADD01E21DACB05200DC8987 /* QuestionReportTableViewCell.swift in Sources */,
 				BAB2A1D71D9BAAC3003971E7 /* PaperModel.swift in Sources */,
 				BAB2A1DD1D9BAAFD003971E7 /* MainViewController.swift in Sources */,
+				BADD01DD1DAC9FCB00DC8987 /* ReportViewController.swift in Sources */,
 				432091201D9D05C0000DDD2E /* SettingPaperTableView.swift in Sources */,
 				432091231D9D05C0000DDD2E /* ReviewPaperTableView.swift in Sources */,
 				432091221D9D05C0000DDD2E /* QuestionTableViewCell.swift in Sources */,
@@ -259,6 +384,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BADD03991DACD12500DC8987 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Charts;
+			targetProxy = BADD03981DACD12500DC8987 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		BAB2A1CD1D9BA814003971E7 /* Debug */ = {
@@ -282,6 +415,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -332,6 +466,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -357,12 +492,15 @@
 		BAB2A1D01D9BA814003971E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 382ASS7UAT;
 				INFOPLIST_FILE = PaperCalculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hollance.PaperCalculator;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pwc.hollance.PaperCalculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ea5dda19-57ba-48eb-9256-3d8c61bbe257";
+				PROVISIONING_PROFILE_SPECIFIER = RetailProfile;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -370,12 +508,15 @@
 		BAB2A1D11D9BA814003971E7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 382ASS7UAT;
 				INFOPLIST_FILE = PaperCalculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hollance.PaperCalculator;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pwc.hollance.PaperCalculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ea5dda19-57ba-48eb-9256-3d8c61bbe257";
+				PROVISIONING_PROFILE_SPECIFIER = RetailProfile;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

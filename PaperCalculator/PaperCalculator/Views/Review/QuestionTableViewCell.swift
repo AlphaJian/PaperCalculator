@@ -37,8 +37,9 @@ class QuestionTableViewCell: UITableViewCell {
     
         let btn = UIButton(type: .custom)
         btn.layer.cornerRadius = 10
-        btn.frame = CGRect(x: LCDW - 10 - 100, y: 0, width: 100, height: 60)
+        btn.frame = CGRect(x: LCDW - 20 - 150, y: 0, width: 150, height: 60)
         btn.backgroundColor = darkBlue
+        btn.titleLabel?.font = mediumFont
         btn.setTitle("批改下一个", for: .normal)
          btn.addTarget(self, action: #selector(QuestionTableViewCell.nextBtnTapped), for: .touchUpInside)
         self.contentView.addSubview(btn)
@@ -65,9 +66,9 @@ class QuestionTableViewCell: UITableViewCell {
     func initUI(arr : [CellQuestionModel], index : IndexPath){
         questionArr = arr
         indexPath = index
-        let padding = 10
+        let padding = 20
         
-        let width = (self.frame.width - 3 * CGFloat(padding)) / 2
+        let width = (LCDW - 3 * CGFloat(padding)) / 2
         
         var originX = padding
 
@@ -77,9 +78,10 @@ class QuestionTableViewCell: UITableViewCell {
             let btn = UIButton(type: .custom)
             btn.layer.cornerRadius = 10
             btn.frame = CGRect(x: originX, y: 0, width: Int(width), height: 60)
-            btn.setTitle("第 \(model.questionNo!) 小题, \(model.realScore!)", for: .normal)
+            btn.setTitle("( \(model.questionNo!) )  --  \(model.realScore!)", for: .normal)
             btn.titleLabel?.backgroundColor = UIColor.clear
-            btn.addTarget(self, action: "btnTapped:", for: .touchUpInside)
+            btn.titleLabel?.font = mediumFont
+            btn.addTarget(self, action: #selector(QuestionTableViewCell.btnTapped(_:)), for: .touchUpInside)
             btn.tag = 10 + i
 
             originX = Int(btn.right()) + padding

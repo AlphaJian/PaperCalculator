@@ -13,6 +13,8 @@ class PaperModel : NSObject
 {
     var sectionQuestionArr : [SectionQuestionModel]!
     var totalScore : Float!
+    var grade = "优秀"
+    var name = ""
 
     
     override init(){

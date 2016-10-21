@@ -8,6 +8,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="PaperCalculator" customModuleProvider="target">
             <connections>
+                <outlet property="btn1" destination="aOs-Ob-X2s" id="wgn-25-RLp"/>
+                <outlet property="btn2" destination="ASN-L4-Mtw" id="acx-Us-33b"/>
+                <outlet property="btn3" destination="A1h-XZ-Uv4" id="7Lk-tg-ghy"/>
+                <outlet property="btn4" destination="UuF-Dn-lW5" id="D2k-ej-8od"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,24 +20,74 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ASN-L4-Mtw">
-                    <frame key="frameInset" minX="99" minY="419" width="46" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="批考卷"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ASN-L4-Mtw">
+                    <color key="backgroundColor" red="0.0" green="0.41568627450000001" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="150" id="xuL-am-Zp8"/>
+                        <constraint firstAttribute="height" constant="60" id="yTi-jh-ZgG"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                    <state key="normal" title="批考卷">
+                        <color key="titleColor" red="0.97647058819999999" green="0.98039215690000003" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
                     <connections>
                         <action selector="pi:" destination="-1" eventType="touchUpInside" id="igJ-Qx-GcB"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOs-Ob-X2s">
-                    <frame key="frameInset" minX="99" minY="259" width="46" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="预设置"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOs-Ob-X2s">
+                    <color key="backgroundColor" red="0.0" green="0.41568627450000001" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="150" id="T3U-UL-22N"/>
+                        <constraint firstAttribute="height" constant="60" id="Ubq-9M-DFT"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                    <state key="normal" title="预设置">
+                        <color key="titleColor" red="0.97647058819999999" green="0.98039215690000003" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
                     <connections>
                         <action selector="setting:" destination="-1" eventType="touchUpInside" id="MaV-BV-Dbc"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A1h-XZ-Uv4">
+                    <color key="backgroundColor" red="0.0" green="0.41568627450000001" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="FPq-gn-Ijt"/>
+                        <constraint firstAttribute="width" constant="150" id="p0o-Dw-RcC"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                    <state key="normal" title="看报告">
+                        <color key="titleColor" red="0.97647058819999999" green="0.98039215690000003" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="checkReport:" destination="-1" eventType="touchUpInside" id="WHx-j3-hEw"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UuF-Dn-lW5">
+                    <color key="backgroundColor" red="0.0" green="0.41568627450000001" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="5Dv-jB-mzR"/>
+                        <constraint firstAttribute="width" constant="150" id="OfC-6T-FzX"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                    <state key="normal" title="看图表">
+                        <color key="titleColor" red="0.97647058819999999" green="0.98039215690000003" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="checkCharts:" destination="-1" eventType="touchUpInside" id="6St-LX-B0F"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="A1h-XZ-Uv4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="25" id="0wC-vq-9P8"/>
+                <constraint firstItem="UuF-Dn-lW5" firstAttribute="leading" secondItem="A1h-XZ-Uv4" secondAttribute="trailing" constant="25" id="1ih-tG-eJ3"/>
+                <constraint firstItem="aOs-Ob-X2s" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="200" id="KpS-cH-9Uh"/>
+                <constraint firstItem="ASN-L4-Mtw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="200" id="MXD-nE-SBv"/>
+                <constraint firstItem="A1h-XZ-Uv4" firstAttribute="top" secondItem="aOs-Ob-X2s" secondAttribute="bottom" constant="25" id="Utu-4r-BYl"/>
+                <constraint firstItem="UuF-Dn-lW5" firstAttribute="top" secondItem="ASN-L4-Mtw" secondAttribute="bottom" constant="25" id="eUe-Wy-qtw"/>
+                <constraint firstItem="aOs-Ob-X2s" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="25" id="t7i-f2-VgP"/>
+                <constraint firstItem="ASN-L4-Mtw" firstAttribute="leading" secondItem="aOs-Ob-X2s" secondAttribute="trailing" constant="25" id="zLR-Lj-sqb"/>
+            </constraints>
         </view>
     </objects>
 </document>

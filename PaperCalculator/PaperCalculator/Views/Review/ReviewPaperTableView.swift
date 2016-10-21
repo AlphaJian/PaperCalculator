@@ -9,7 +9,7 @@
 import UIKit
 
 class ReviewPaperTableView: UITableView, UITableViewDelegate, UITableViewDataSource {
-
+    
     var model = DataManager.shareManager.paperModel.copySelf()
     
     var singleMarkHandler : ReturnWithThreeParmsBlock!
@@ -66,44 +66,44 @@ class ReviewPaperTableView: UITableView, UITableViewDelegate, UITableViewDataSou
         cell.clearCell()
         
         
-        if indexPath.section == model.sectionQuestionArr.count - 1 && indexPath.row == model.sectionQuestionArr[model.sectionQuestionArr.count - 1].cellQuestionArr.count - 1 {
-        
-        cell.initLastCell()
+        if indexPath.section == model.sectionQuestionArr.count - 1 && model.sectionQuestionArr[model.sectionQuestionArr.count - 1].cellQuestionArr.count % 2 == 0 && indexPath.row == model.sectionQuestionArr[model.sectionQuestionArr.count - 1].cellQuestionArr.count / 2 || indexPath.section == model.sectionQuestionArr.count - 1 && model.sectionQuestionArr[model.sectionQuestionArr.count - 1].cellQuestionArr.count % 2 != 0 && indexPath.row == model.sectionQuestionArr[model.sectionQuestionArr.count - 1].cellQuestionArr.count / 2 + 1
+        {
+            cell.initLastCell()
             cell.nextPaperHandler = {
                 if self.nextPaperHandler != nil {
-                self.nextPaperHandler!()
+                    self.nextPaperHandler!()
                 }
-            
+                
             }
             return cell
-        
-        
-        } else {
-        
-        
-        
-        if indexPath.row * 2 + 1 < cellArr.count
-        {
-            cell.initUI(arr: [cellArr[indexPath.row * 2], cellArr[indexPath.row * 2 + 1]], index: indexPath)
-        }
-        else
-        {
-            cell.initUI(arr: [cellArr[indexPath.row * 2]], index: indexPath)
         }
         
-        cell.btnHandler = {(newIndex, oldIndex, obj) -> Void in
-            if self.singleMarkHandler != nil
+        else {
+            
+            
+            
+            if indexPath.row * 2 + 1 < cellArr.count
             {
-                self.singleMarkHandler(newIndex, oldIndex, obj)
+                cell.initUI(arr: [cellArr[indexPath.row * 2], cellArr[indexPath.row * 2 + 1]], index: indexPath)
             }
-        }
-        
-        cell.multiBtnHandler = {(newIndex, oldIndex, obj) -> Void in
-            if self.multiMarkHandler != nil
+            else
             {
-                self.multiMarkHandler(newIndex, oldIndex, obj)
+                cell.initUI(arr: [cellArr[indexPath.row * 2]], index: indexPath)
             }
-        }
+            
+            cell.btnHandler = {(newIndex, oldIndex, obj) -> Void in
+                if self.singleMarkHandler != nil
+                {
+                    self.singleMarkHandler(newIndex, oldIndex, obj)
+                }
+            }
+            
+            cell.multiBtnHandler = {(newIndex, oldIndex, obj) -> Void in
+                if self.multiMarkHandler != nil
+                {
+                    self.multiMarkHandler(newIndex, oldIndex, obj)
+                }
+            }
             return cell
         }
     }
@@ -113,6 +113,7 @@ class ReviewPaperTableView: UITableView, UITableViewDelegate, UITableViewDataSou
         view.backgroundColor = UIColor.white
         let lbl = UILabel(frame: CGRect(x: 20, y: 0, width: view.frame.width - 20, height: 40))
         lbl.text = "第 \(section + 1) 大题, 得分\(model.sectionQuestionArr[section].sectionScore!)"
+        lbl.font = mediumFont
         lbl.textColor = darkBlue
         view.addSubview(lbl)
         
@@ -127,5 +128,5 @@ class ReviewPaperTableView: UITableView, UITableViewDelegate, UITableViewDataSou
         return 40
     }
     
-
+    
 }

@@ -28,6 +28,7 @@ let lightBlue : UIColor = UIColor.init(red: 0, green: 106/255, blue: 191/255, al
 let darkBlue : UIColor = UIColor.init(red: 17/255, green: 62/255, blue: 142/255, alpha: 1)
 let lightRed : UIColor = UIColor.init(red: 224/255, green: 109/255, blue: 86/255, alpha: 1)
 let darkRed : UIColor = UIColor.init(red: 219/255, green: 49/255, blue: 156/255, alpha: 1)
+let mediumFont = UIFont.systemFont(ofSize: 18, weight: UIFontWeightMedium)
 
 let pfont:UIFont = UIFont.init(name: "Roboto-Regular", size: 13)!
 class BlockDefination: NSObject {

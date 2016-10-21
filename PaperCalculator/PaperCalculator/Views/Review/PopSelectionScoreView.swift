@@ -26,6 +26,14 @@ class PopSelectionScoreView: UIView {
         var originY = padding
         var width = (Int(container.width()) - padding * 4) / 3
         var height = 0
+        
+        
+        if score < 6 {
+            originY = 150
+        } else if score < 9 {
+            originY = 100
+        }
+    
         if Int(score) % 3 == 0
         {
             height = (width + padding) * (Int(score) / 3)
@@ -42,6 +50,9 @@ class PopSelectionScoreView: UIView {
             btn.backgroundColor = UIColor.white
             btn.setTitleColor(lightBlue, for: .normal)
             btn.layer.cornerRadius = btn.width() / 2
+            btn.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: UIFontWeightMedium)
+            
+
 //            btn.layer.borderWidth = 2
 //            btn.layer.borderColor = lightBlue.cgColor
             btn.addTarget(self, action: #selector(PopSelectionScoreView.btnTapped(_:)), for: .touchUpInside)

@@ -77,6 +77,7 @@ class SettingPaperTableView: UITableView, UITableViewDelegate, UITableViewDataSo
         let view = UIView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 40))
         let titleLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 100, height: 20))
         titleLabel.text = "第 \(section + 1) 大题"
+        titleLabel.font = mediumFont
         titleLabel.textColor = UIColor.white
         view.addSubview(titleLabel)
         
