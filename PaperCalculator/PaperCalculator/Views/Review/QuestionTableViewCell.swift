@@ -78,7 +78,18 @@ class QuestionTableViewCell: UITableViewCell {
             let btn = UIButton(type: .custom)
             btn.layer.cornerRadius = 10
             btn.frame = CGRect(x: originX, y: 0, width: Int(width), height: 60)
-            btn.setTitle("( \(model.questionNo!) )  --  \(model.realScore!)", for: .normal)
+            
+            let titleQuestionNo : String = "( \(model.questionNo!) )"
+            let titleScore : String = " \(model.realScore!)"
+            let totalTitle = titleQuestionNo + titleScore
+            
+           let title : NSMutableAttributedString = NSMutableAttributedString(string: totalTitle, attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 25)])
+           
+            title.addAttribute(NSFontAttributeName, value: UIFont.systemFont(ofSize: 10), range: NSRange.init(location: titleQuestionNo.characters.count, length: totalTitle.characters.count - titleQuestionNo.characters.count))
+            title.addAttribute(NSForegroundColorAttributeName, value: UIColor.white, range: NSRange.init(location: 0, length: totalTitle.characters.count))
+            
+            btn.setAttributedTitle(title , for: .normal)
+            //btn.setTitle("( \(model.questionNo!) )  --  \(model.realScore!)", for: .normal)
             btn.titleLabel?.backgroundColor = UIColor.clear
             btn.titleLabel?.font = mediumFont
             btn.addTarget(self, action: #selector(QuestionTableViewCell.btnTapped(_:)), for: .touchUpInside)
