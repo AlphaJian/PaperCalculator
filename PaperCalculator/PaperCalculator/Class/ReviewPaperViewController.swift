@@ -28,13 +28,19 @@ class ReviewPaperViewController: UIViewController {
     }
     
     func initSC(){
+        let model = DataManager.shareManager.paperModel.copySelf()
+
+        if model.sectionQuestionArr.count == 0
+        {
+            return
+        }
+        
         paperSC = UIScrollView(frame: CGRect(x: 0, y: 64, width: LCDW, height: LCDH - 64))
         paperSC.backgroundColor = UIColor.white
         paperSC.isPagingEnabled = true
         paperSC.showsVerticalScrollIndicator = false
         paperSC.contentSize = CGSize(width: paperSC.width() * CGFloat(DataManager.shareManager.paperModel.sectionQuestionArr.count), height: 0)
         var originX : CGFloat = 0
-        let model = DataManager.shareManager.paperModel.copySelf()
 
         for index in 0...model.sectionQuestionArr.count - 1 {
             let tableview = ReviewPaperTableView(frame: CGRect(x: originX, y: 10, width: paperSC.width(), height: paperSC.height() - 10), style: .plain)
