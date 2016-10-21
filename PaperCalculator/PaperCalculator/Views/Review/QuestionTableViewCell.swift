@@ -58,11 +58,6 @@ class QuestionTableViewCell: UITableViewCell {
         
     }
     
-    
-    
-    
-    
-    
     func initUI(arr : [CellQuestionModel], index : IndexPath){
         questionArr = arr
         indexPath = index
